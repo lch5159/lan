@@ -7,54 +7,63 @@
 <body>
 <div>
     <span>가게명 : </span>
-    <span><a th:text="${restaurant.name}" th:href="@{${restaurant.url}}" target='_blank'>zz</a></span>
+    <span><a href="https://www.naver.com/" target='_blank'>zz</a></span>
 </div>
 <div>
     <span>카테고리 : </span>
-    <span th:text="${foodCategories[restaurant.category.name()]}">ㅋㅋ</span>
+    <span>한식/중식...그런거 들어가는 부분</span>
 </div>
 <div>
     <span>TMI : </span>
-    <span th:text="${restaurant.adminComment}">ㅋㅋ</span>
+    <span>가게에대한 한줄평</span>
 </div>
-<div th:block th:if = "${restaurant.getLunchMenuName() != null}">
+<div>
     <div>
         <span>점심 추천 메뉴 : </span>
-        <span th:text="${restaurant.getLunchMenuName()}">ㅋㅋ</span>
+        <span>국밥</span>
         <span> / 가격 : </span>
-        <span th:text="${restaurant.getLunchMenuPrice()}">ㅋㅋ</span>
+        <span>8000원</span>
     </div>
 </div>
-<div th:block th:if = "${restaurant.getDinnerMenuName() != null}">
+<div>
     <div>
         <span>저녁 추천 메뉴 : </span>
-        <span th:text="${restaurant.getDinnerMenuName()}">ㅋㅋ</span>
-        <span>/ 가격 : </span>
-        <span th:text="${restaurant.getDinnerMenuPrice()}">ㅋㅋ</span>
+        <span>치킨</span>
+        <span> / 가격 : </span>
+        <span>9000원</span>
     </div>
 </div>
 
 <div>
-    <span th:if="${restaurant.hasCostPerformance}">#가성비 </span>
-    <span th:if="${restaurant.canEatSingle}">#혼밥가능 </span>
-    <span th:if="${restaurant.isAtmosphere}">#분위기 </span>
+    <span>#가성비 </span>
+    <span>#혼밥가능 </span>
+    <span>#분위기 </span>
 </div>
 
 <div>
-    <form action="" th:action="@{/reviews(restaurantId=${restaurant.id})}" method="post" th:object="${reviewCreateForm}">
+    <form action="" method="post">
         <div>
-            <input type="text" th:field="*{name}">
-            <input type="password" th:field="*{password}">
-            <input type="text" th:field="*{content}">
+            <input type="text">
+            <input type="password">
+            <input type="text">
         </div>
         <button type="submit">전송</button>
     </form>
+</div>
 
+<div>
+    <div>
+        <div>아이디</div>
+        <div>댓글내용</div>
+        <div>작성시간</div>
+    </div>
+    <div> <!-- 댓글 하나당 해당 div가 한개씩 -->
+        <div>아이디2</div>
+        <div>댓글내용2</div>
+        <div>작성시간2</div>
+    </div>
 </div>
-<div th:each="review : ${reviews}">
-    <div th:text="${review.writerName}"></div>
-    <div th:text="${review.content}"></div>
-</div>
+
 
 </body>
 <!--타임리프 써서 반복.-->
