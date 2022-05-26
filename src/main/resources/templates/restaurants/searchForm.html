@@ -6,203 +6,41 @@
   <link rel="stylesheet" href="../css/style.css">
   <title>식당 조건 검색</title>
   <script>
-    function colorChange(x){
-      let check = false;
-      let rowcolor = null;
+    let check = false;
+    let rowcolor= null;
 
-      if(x === 'a'){
-        check = document.getElementById("front");
-        rowcolor = document.getElementById("location1");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
+    function colorChange(x, event){
+      rowcolor = document.getElementById(x);
+
+      if(event.target.checked){
+        rowcolor.style.background="darkseagreen";
+      }else{
+        rowcolor.style.background="ghostwhite";
       }
-      if(x === 'b'){
-        check = document.getElementById("back");
-        rowcolor = document.getElementById("location2");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'c'){
-        check = document.getElementById("sangdae");
-        rowcolor = document.getElementById("location3");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'd'){
-        check = document.getElementById("side");
-        rowcolor = document.getElementById("location4");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'e'){
-        check = document.getElementById("bockgae");
-        rowcolor = document.getElementById("location5");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'f'){
-        check = document.getElementById("location_etc");
-        rowcolor = document.getElementById("location6");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'g'){
-        check = document.getElementById("korea");
-        rowcolor = document.getElementById("food1");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'h'){
-        check = document.getElementById("china");
-        rowcolor = document.getElementById("food2");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'i'){
-        check = document.getElementById("japan");
-        rowcolor = document.getElementById("food3");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'j'){
-        check = document.getElementById("western");
-        rowcolor = document.getElementById("food4");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'k'){
-        check = document.getElementById("asian");
-        rowcolor = document.getElementById("food5");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'l'){
-        check = document.getElementById("chicken");
-        rowcolor = document.getElementById("food6");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'm'){
-        check = document.getElementById("fastfood");
-        rowcolor = document.getElementById("food7");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'n'){
-        check = document.getElementById("steak");
-        rowcolor = document.getElementById("food8");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'o'){
-        check = document.getElementById("snack");
-        rowcolor = document.getElementById("food9");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'p'){
-        check = document.getElementById("food_etc");
-        rowcolor = document.getElementById("food10");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'q'){
-        check = document.getElementById("vibe");
-        rowcolor = document.getElementById("condition1");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'r'){
-        check = document.getElementById("effectiveness");
-        rowcolor = document.getElementById("condition2");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 's'){
-        check = document.getElementById("solo");
-        rowcolor = document.getElementById("condition3");
-        if (check.checked === true){
-          rowcolor.style.background = "gray";
-        } else {
-          rowcolor.style.background = "azure";
-        }
-      }
-      if(x === 'aa'){
-        check = document.getElementById("lunch");
+      if(x==='time1'){
+        check=document.getElementById("lunch");
         let rowcolor1 = document.getElementById("time1");
         let rowcolor2 = document.getElementById("time2");
-        if (check.checked === true){
-          rowcolor1.style.background = "gray";
-          rowcolor2.style.background = "azure";
-        } else {
-          rowcolor1.style.background = "azure";
-          rowcolor2.style.background = "gray";
+        if(check.checked){
+          rowcolor1.style.background="darkseagreen";
+          rowcolor2.style.background="ghostwhite";
+
+        }else{
+          rowcolor1.style.background="ghostwhite";
+          rowcolor2.style.background="darkseagreen";
         }
       }
-      if(x === 'bb'){
-        check = document.getElementById("dinner");
+      if(x==='time2'){
+        check=document.getElementById("dinner");
         let rowcolor1 = document.getElementById("time1");
         let rowcolor2 = document.getElementById("time2");
-        if (check.checked === true){
-          rowcolor1.style.background = "azure";
-          rowcolor2.style.background = "gray";
-        } else {
-          rowcolor1.style.background = "gray";
-          rowcolor2.style.background = "azure";
+        if(check.checked){
+          rowcolor1.style.background="ghostwhite";
+          rowcolor2.style.background="darkseagreen";
+
+        }else{
+          rowcolor1.style.background="darkseagreen";
+          rowcolor2.style.background="ghostwhite";
         }
       }
     }
@@ -218,8 +56,8 @@
       <h3>언제 식사를 할 예정인가요?(필수)</h3>
       <table align="center">
         <tr>
-          <th onclick="colorChange('aa')" id="time1"><label><input type="radio" name="time" id="lunch">점심</label></th>
-          <th onclick="colorChange('bb')" id="time2"><label><input type="radio" name="time" id="dinner">저녁</label></th>
+          <th onclick="colorChange(this.id, event)" id="time1"><label><input type="radio" name="time" id="lunch">점심</label></th>
+          <th onclick="colorChange(this.id, event)" id="time2"><label><input type="radio" name="time" id="dinner">저녁</label></th>
         </tr>
       </table>
     </div>
@@ -227,16 +65,16 @@
     <h3>위치를 모두 선택하세요</h3>
       <table align="center">
         <tr>
-          <th onclick="colorChange('a')" id="location1"><label><input type="checkbox" name="location" id="front">정문&#x2B07;</label></th>
-          <th onclick="colorChange('b')" id="location2"><label><input type="checkbox" name="location" id="back">후문&#x27A1;</label></th>
+          <th onclick="colorChange(this.id, event)" id="location1"><label><input type="checkbox" name="location" id="front">정문&#x2B07;</label></th>
+          <th onclick="colorChange(this.id, event)" id="location2"><label><input type="checkbox" name="location" id="back">후문&#x27A1;</label></th>
         </tr>
           <tr>
-          <th onclick="colorChange('c')" id="location3"><label><input type="checkbox" name="location" id="sangdae">상대&#x2196;</label></th>
-          <th onclick="colorChange('d')" id="location4"><label><input type="checkbox" name="location" id="side">쪽문&#x2197;</label></th>
+          <th onclick="colorChange(this.id, event)" id="location3"><label><input type="checkbox" name="location" id="sangdae">상대&#x2196;</label></th>
+          <th onclick="colorChange(this.id, event)" id="location4"><label><input type="checkbox" name="location" id="side">쪽문&#x2197;</label></th>
         </tr>
         <tr>
-          <th onclick="colorChange('e')" id="location5"><label><input type="checkbox" name="location" id="bockgae">복개도로&#x2198;</label></th>
-          <th onclick="colorChange('f')" id="location6"><label><input type="checkbox" name="location" id="location_etc">기타</label></th>
+          <th onclick="colorChange(this.id, event)" id="location5"><label><input type="checkbox" name="location" id="bockgae">복개도로&#x2198;</label></th>
+          <th onclick="colorChange(this.id, event)" id="location6"><label><input type="checkbox" name="location" id="location_etc">기타</label></th>
         </tr>
       </table>
   </div>
@@ -245,24 +83,24 @@
     <h3>먹기 싫은 종류의 음식을 모두 선택하세요</h3>
     <table align="center">
       <tr>
-        <th onclick="colorChange('g')" id="food1"><label><input type="checkbox" name="food" id="korea">한</label></th>
-        <th onclick="colorChange('h')" id="food2"><label><input type="checkbox" name="food" id="china">중</label></th>
+        <th onclick="colorChange(this.id, event)" id="food1"><label><input type="checkbox" name="food" id="korea">한</label></th>
+        <th onclick="colorChange(this.id, event)" id="food2"><label><input type="checkbox" name="food" id="china">중</label></th>
       </tr>
       <tr>
-        <th onclick="colorChange('i')" id="food3"><label><input type="checkbox" name="food" id="japan">일</label></th>
-        <th onclick="colorChange('j')" id="food4"><label><input type="checkbox" name="food" id="western">양</label></th>
+        <th onclick="colorChange(this.id, event)" id="food3"><label><input type="checkbox" name="food" id="japan">일</label></th>
+        <th onclick="colorChange(this.id, event)" id="food4"><label><input type="checkbox" name="food" id="western">양</label></th>
       </tr>
       <tr>
-        <th onclick="colorChange('k')" id="food5"><label><input type="checkbox" name="food" id="asian">아시아</label></th>
-        <th onclick="colorChange('l')" id="food6"><label><input type="checkbox" name="food" id="chicken">치킨</label></th>
+        <th onclick="colorChange(this.id, event)" id="food5"><label><input type="checkbox" name="food" id="asian">아시아</label></th>
+        <th onclick="colorChange(this.id, event)" id="food6"><label><input type="checkbox" name="food" id="chicken">치킨</label></th>
       </tr>
       <tr>
-        <th onclick="colorChange('m')" id="food7"><label><input type="checkbox" name="food" id="fastfood">패푸</label></th>
-        <th onclick="colorChange('n')" id="food8"><label><input type="checkbox" name="food" id="steak">고기</label></th>
+        <th onclick="colorChange(this.id, event)" id="food7"><label><input type="checkbox" name="food" id="fastfood">패푸</label></th>
+        <th onclick="colorChange(this.id, event)" id="food8"><label><input type="checkbox" name="food" id="steak">고기</label></th>
       </tr>
       <tr>
-        <th onclick="colorChange('o')" id="food9"><label><input type="checkbox" name="food" id="snack">분식</label></th>
-        <th onclick="colorChange('p')" id="food10"><label><input type="checkbox" name="food" id="food_etc">기타</label></th>
+        <th onclick="colorChange(this.id, event)" id="food9"><label><input type="checkbox" name="food" id="snack">분식</label></th>
+        <th onclick="colorChange(this.id, event)" id="food10"><label><input type="checkbox" name="food" id="food_etc">기타</label></th>
       </tr>
     </table>
   </div>
@@ -271,9 +109,9 @@
     <h3>원하는 조건을 모두 클릭하세요</h3>
     <table align="center">
       <tr>
-        <th onclick="colorChange('q')" id="condition1"><label><input type="checkbox" name="condition" id="vibe">분위기</label></th>
-        <th onclick="colorChange('r')" id="condition2"><label><input type="checkbox" name="condition" id="effectiveness">가성비</label></th>
-        <th onclick="colorChange('s')" id="condition3"><label><input type="checkbox" name="condition" id="solo">혼밥</label></th>
+        <th onclick="colorChange(this.id, event)" id="condition1"><label><input type="checkbox" name="condition" id="vibe">분위기</label></th>
+        <th onclick="colorChange(this.id, event)" id="condition2"><label><input type="checkbox" name="condition" id="effectiveness">가성비</label></th>
+        <th onclick="colorChange(this.id, event)" id="condition3"><label><input type="checkbox" name="condition" id="solo">혼밥</label></th>
       </tr>
     </table>
   </div>

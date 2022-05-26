@@ -7,12 +7,11 @@
 
 body{
     margin: 0;
-    background-color: azure;
+    background-color: ghostwhite;
 }
 table{
     border-collapse: collapse;
     border-color: cadetblue;
-    border-radius: 5px;
     border-style: solid;
     box-shadow: 0 0 0 1px cadetblue;
 }
@@ -24,6 +23,7 @@ tr th {
     width: 150px;
     height: 50px;
     border-color: cadetblue;
+    box-shadow: -3px -3px 2px rgba(228, 226, 226,0.8), 3px 3px 5px rgba(0,0,0,0.2);
 }
 
 label {
@@ -31,6 +31,9 @@ label {
 }
 
 input[type="checkbox"] {
+    display: none;
+}
+input[type="radio"] {
     display: none;
 }
 
@@ -68,5 +71,6 @@ button{
     float: right;
     width: 100px;
     height: 50px;
+    box-shadow: -3px -3px 2px rgba(228, 226, 226,0.8), 3px 3px 5px rgba(0,0,0,0.2);
 }
 
