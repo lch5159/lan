@@ -2,69 +2,54 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/detail_style.css">
     <title>Title</title>
 </head>
 <body>
 <div>
-    <span>가게명 : </span>
-    <span><a href="https://www.naver.com/" target='_blank'>zz</a></span>
+    <header>
+        전남대 맛집 탐색 어플
+    </header>
+    <main>
+        <section class="explain">
+            <article class="informaion">
+                <h4>가게명 : </h4>
+                <a href="#" target="_blank">ㅎㅎ</a><br>
+                <h4>카테고리 : </h4><br>
+                <h5>점심 추천 메뉴 : </h5>
+                <h5>가격 : </h5>
+                <h4>TMI : </h4>
+            </article>
+            <article class="hashtag">
+                <span>#가성비</span>
+                <span>#분위기좋은</span>
+                <span>#혼밥가능</span>
+            </article>
+        </section>
+        <hr>
+        <section class="bbs">
+            <h3>음식점에 대한 의견을 나눠주세요!</h3>
+            <form action="" method="post">
+                <input type="text"/>
+                <input type="password"/><br>
+                <textarea rows="10" cols="40" class="content" id="content" placeholder="내용"></textarea>
+                <button type="submit">전송</button>
+            </form>
+        </section>
+        <hr>
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <th>아이디</th><th>작성시간</th>
+            </tr>
+            <tr>
+                <td colspan="2">여기 정말 맛있습니다</td>
+            </tr>
+        </table>
+    </footer>
 </div>
-<div>
-    <span>카테고리 : </span>
-    <span>한식/중식...그런거 들어가는 부분</span>
-</div>
-<div>
-    <span>TMI : </span>
-    <span>가게에대한 한줄평</span>
-</div>
-<div>
-    <div>
-        <span>점심 추천 메뉴 : </span>
-        <span>국밥</span>
-        <span> / 가격 : </span>
-        <span>8000원</span>
-    </div>
-</div>
-<div>
-    <div>
-        <span>저녁 추천 메뉴 : </span>
-        <span>치킨</span>
-        <span> / 가격 : </span>
-        <span>9000원</span>
-    </div>
-</div>
-
-<div>
-    <span>#가성비 </span>
-    <span>#혼밥가능 </span>
-    <span>#분위기 </span>
-</div>
-
-<div>
-    <form action="" method="post">
-        <div>
-            <input type="text">
-            <input type="password">
-            <input type="text">
-        </div>
-        <button type="submit">전송</button>
-    </form>
-</div>
-
-<div>
-    <div>
-        <div>아이디</div>
-        <div>댓글내용</div>
-        <div>작성시간</div>
-    </div>
-    <div> <!-- 댓글 하나당 해당 div가 한개씩 -->
-        <div>아이디2</div>
-        <div>댓글내용2</div>
-        <div>작성시간2</div>
-    </div>
-</div>
-
-
 </body>
 <!--타임리프 써서 반복.-->
 </html>
