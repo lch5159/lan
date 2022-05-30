@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/detail_style.css">
-    <title>Title</title>
+    <title>상세정보</title>
 </head>
 <body>
-<div>
-    <header>
-        전남대 맛집 탐색 어플
-    </header>
+    <header>전남대 맛집 탐색 어플 </header>
     <main>
         <section class="explain">
             <article class="informaion">
                 <h4>가게명 : </h4>
-                <a href="#" target="_blank">ㅎㅎ</a><br>
-                <h4>카테고리 : </h4><br>
-                <h5>점심 추천 메뉴 : </h5>
-                <h5>가격 : </h5>
-                <h4>TMI : </h4>
+                <a href="#" target="_blank">맛집</a><br>
+                <h4>카테고리 : 한식</h4><br>
+                <h5> - 점심 추천 메뉴 : 긴티띠게</h5>
+                <h5> - 가격 : 8,000</h5>
+                <h4>TMI : 짬</h4>
             </article>
             <article class="hashtag">
                 <span>#가성비</span>
@@ -34,22 +31,25 @@
                 <input type="text"/>
                 <input type="password"/><br>
                 <textarea rows="10" cols="40" class="content" id="content" placeholder="내용"></textarea>
-                <button type="submit">전송</button>
+                <button type="submit" id="submit">전송</button>
             </form>
         </section>
-        <hr>
     </main>
     <footer>
-        <table>
-            <tr>
-                <th>아이디</th><th>작성시간</th>
-            </tr>
-            <tr>
-                <td colspan="2">여기 정말 맛있습니다</td>
-            </tr>
-        </table>
+        <div>
+            <hr>
+            <table>
+                <tr>
+                    <th>아이디</th><th>작성시간</th>
+                </tr>
+                <tr>
+                    <td colspan="2">여기 정.말 맛있습니다</td>
+                </tr>
+            </table>
+            <button type="submit" id="revise">수정</button>
+            <button type="submit" id="delete">삭제</button>
+        </div>
     </footer>
-</div>
 </body>
 <!--타임리프 써서 반복.-->
 </html>

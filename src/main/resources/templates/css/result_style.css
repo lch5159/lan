@@ -1,0 +1,77 @@
+@font-face {
+    font-family: '까투리';
+    src: url("../font/Katuri.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+    background-color: ghostwhite;
+}
+header{
+    font-family: '까투리';
+    text-align: center;
+    font-size: 35px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: cadetblue;
+    margin-bottom: 1rem;
+    padding: 10px;
+}
+main{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+article{
+    cursor: pointer;
+}
+
+footer{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+table{
+    width: 100%;
+    border-style: solid;
+    border-color: gray;
+    border-collapse: collapse;
+}
+tr th{
+    border-style: solid;
+    border-color: gray;
+    background-color: blanchedalmond;
+}
+td{
+    text-align: center;
+    border-style: solid;
+    border-color: gray;
+}
+table td:first-child{
+     background-color: white;
+ }
+table td:last-child{
+    background-color: lightgray;
+}
+
+.maps{
+    display: block;
+    margin: 0 10px 10px 10px;
+    height: 300px;
+    border-style: solid;
+}
+.maps:after{
+    padding-bottom: 100%;
+}
+
+@media screen and (min-width: 450px){
+    body{
+        text-align: center;
+    }
+    main{
+        width: 450px;
+        display: inline-block;
+
+    }
+}

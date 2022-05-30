@@ -2,133 +2,150 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/search_style.css">
+  <link rel="stylesheet" href="../css/result_style.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   <title>간단한 지도 표시하기</title>
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tv4q0aykz0"></script>
 </head>
 <body>
-<div id="map" style="width:550px;height:550px;"></div>
-<!--이거 크기 모바일에 맞춰 가변적으로 바뀌게 해야함.-->
-<div id="results"><!-- 여기가 지도 밑에 식당 나오는 위치. 해당 태그 밑에 div 5개까지 나올 수 있어요!-->
-  <div id="1" style="cursor: pointer;" onclick="window.open('https://www.naver.com')">
-    <div>가게명 : 놀부 / 1인당 최소 비용 : 11000</div>
-    <div>상대 / 한식</div>
-    <div></div>
-  </div>
-  <div id="2" style="cursor: pointer;" onclick="window.open('https://www.naver.com')">
-    <div>가게명 : 가게2 / 1인당 최소 비용 : 11000</div>
-    <div>상대 / 한식</div>
-    <div></div>
-  </div>
-
-  <script th:inline="javascript">
-    var locations = [[${locations}]]
-    var foodCategories = [[${foodCategories}]]
-    var results = [[${results}]];
-
-    // 디비에 테스트로 넣을 값.
-    // insert into restaurant values(1,'ddsjladal',true, 'KOREAN', 35.177049, 126.906614, true, true, 'BACK_DOOR', 1000, '테스트가게' ,'12312313');
-    // insert into restaurant values(2,'ddsjladal',true, 'CHINESE', 35.178049, 126.906614, true, true, 'BACK_DOOR', 3000, '테스트가게1' ,'12312313');
-    // SELECT * FROM RESTAURANT;
-
-    var mapOptions = {
-      center: new naver.maps.LatLng(35.177049, 126.906614),
-      zoom: 15
-    };
-
-    var map = new naver.maps.Map('map', mapOptions);
-
-    results = results.reduce(function(target, key, index) {
-      target[key.name] = key;
-      return target;
-    }, {}) //initial empty object
-
-    var MARKER_SPRITE_X_OFFSET = 29,
-            MARKER_SPRITE_Y_OFFSET = 50,
-            MARKER_SPRITE_POSITION = results;
-
-    var markers = [],
-            infoWindows = [];
-
-    for (var key in MARKER_SPRITE_POSITION) {
-
-      var position = new naver.maps.LatLng(
-              MARKER_SPRITE_POSITION[key].locationX,
-              MARKER_SPRITE_POSITION[key].locationY);
-
-      var marker = new naver.maps.Marker({
-        map: map,
-        position: position,
-        zIndex: 100
-      });
-
-      var infoWindow = new naver.maps.InfoWindow({
-        content: '<div style="width:150px;text-align:center;padding:10px;">' +
-                '가게명 : '+ key +
-                '<br>종류 : '+ foodCategories[MARKER_SPRITE_POSITION[key].category] +'</br></div>'
-      });
-
-      markers.push(marker);
-      infoWindows.push(infoWindow);
-
-      //밑에 리스트 형식으로 html을 만들어준다.
-      addRestaurantList(MARKER_SPRITE_POSITION[key]);
-    };
-
-    function addRestaurantList(restaurant) {
-      const div = document.createElement("div");
-      div.setAttribute('id', restaurant.id);
-
-      div.setAttribute("style", "cursor: pointer;");
-      div.setAttribute('onclick', 'window.open(\"restaurants/'+restaurant.id+'\")');
-
-      const detailDiv1 = document.createElement("div");
-      const detailText1 = document.createTextNode("가게명 : " + restaurant.name + " / 1인당 최소 비용 : " + restaurant.minCostPerPerson);
-      detailDiv1.appendChild(detailText1);
-      div.appendChild(detailDiv1);
-
-      const detailDiv2 = document.createElement("div");
-      const detailText2 = document.createTextNode(locations[restaurant.location] +" / "+ foodCategories[restaurant.category]);
-      detailDiv2.appendChild(detailText2);
-      div.appendChild(detailDiv2);
-
-      const detailDiv3 = document.createElement("div");
-      if (restaurant.isAtmosphere) {
-        detailDiv3.appendChild(document.createTextNode("#분위기 "));
-      }
-      if (restaurant.canEatSingle) {
-        detailDiv3.appendChild(document.createTextNode("#혼밥가능 "));
-      }
-      if (restaurant.hasCostPerformance) {
-        detailDiv3.appendChild(document.createTextNode("#가성비 "));
-      }
-      div.appendChild(detailDiv3);
-
-      document.getElementById('results').appendChild(div);
-    }
-    // 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
-    function getClickHandler(seq) {
-      return function(e) {
-        var marker = markers[seq],
-                infoWindow = infoWindows[seq];
-
-        if (infoWindow.getMap()) {
-          infoWindow.close();
-        } else {
-          infoWindow.open(map, marker);
-        }
-      }
-    }
-
-    for (var i=0, ii=markers.length; i<ii; i++) {
-      naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i));
-    }
-
-  </script>
-</div>
+  <header>전남대 맛집 탐색 어플</header>
+  <main>
+    <section class="maps">
+      <div> </div> <!--지도 들어갈 자리-->
+    </section>
+    <section class="information">
+      <div id="results"><!-- 여기가 지도 밑에 식당 나오는 위치. 해당 태그 밑에 div 5개까지 나올 수 있어요!-->
+        <article id="1" onclick="window.open('https://www.naver.com')">
+          <table>
+            <tr>
+              <td>가게명 : 놀부</td><td>상대</td>
+            </tr>
+            <tr>
+              <td>1인당 최소 비용 : 11000</td><td>한식</td>
+            </tr>
+          </table>
+          <hr>
+        </article>
+        <article id="2" onclick="window.open('https://www.naver.com')">
+          <table>
+            <tr>
+              <td>가게명 : 놀부</td><td>상대</td>
+            </tr>
+            <tr>
+              <td>1인당 최소 비용 : 11000</td><td>한식</td>
+            </tr>
+          </table>
+          <hr>
+        </article>
+      </div>
+    </section>
+  </main>
 </body>
+<script th:inline="javascript">
+  var locations = [[${locations}]]
+  var foodCategories = [[${foodCategories}]]
+  var results = [[${results}]];
+
+  // 디비에 테스트로 넣을 값.
+  // insert into restaurant values(1,'ddsjladal',true, 'KOREAN', 35.177049, 126.906614, true, true, 'BACK_DOOR', 1000, '테스트가게' ,'12312313');
+  // insert into restaurant values(2,'ddsjladal',true, 'CHINESE', 35.178049, 126.906614, true, true, 'BACK_DOOR', 3000, '테스트가게1' ,'12312313');
+  // SELECT * FROM RESTAURANT;
+
+  var mapOptions = {
+    center: new naver.maps.LatLng(35.177049, 126.906614),
+    zoom: 15
+  };
+
+  var map = new naver.maps.Map('map', mapOptions);
+
+  results = results.reduce(function(target, key, index) {
+    target[key.name] = key;
+    return target;
+  }, {}) //initial empty object
+
+  var MARKER_SPRITE_X_OFFSET = 29,
+          MARKER_SPRITE_Y_OFFSET = 50,
+          MARKER_SPRITE_POSITION = results;
+
+  var markers = [],
+          infoWindows = [];
+
+  for (var key in MARKER_SPRITE_POSITION) {
+
+    var position = new naver.maps.LatLng(
+            MARKER_SPRITE_POSITION[key].locationX,
+            MARKER_SPRITE_POSITION[key].locationY);
+
+    var marker = new naver.maps.Marker({
+      map: map,
+      position: position,
+      zIndex: 100
+    });
+
+    var infoWindow = new naver.maps.InfoWindow({
+      content: '<div style="width:150px;text-align:center;padding:10px;">' +
+              '가게명 : '+ key +
+              '<br>종류 : '+ foodCategories[MARKER_SPRITE_POSITION[key].category] +'</br></div>'
+    });
+
+    markers.push(marker);
+    infoWindows.push(infoWindow);
+
+    //밑에 리스트 형식으로 html을 만들어준다.
+    addRestaurantList(MARKER_SPRITE_POSITION[key]);
+  }
+
+  function addRestaurantList(restaurant) {
+    const div = document.createElement("div");
+    div.setAttribute('id', restaurant.id);
+
+    div.setAttribute("style", "cursor: pointer;");
+    div.setAttribute('onclick', 'window.open(\"restaurants/'+restaurant.id+'\")');
+
+    const detailDiv1 = document.createElement("div");
+    const detailText1 = document.createTextNode("가게명 : " + restaurant.name + " / 1인당 최소 비용 : " + restaurant.minCostPerPerson);
+    detailDiv1.appendChild(detailText1);
+    div.appendChild(detailDiv1);
+
+    const detailDiv2 = document.createElement("div");
+    const detailText2 = document.createTextNode(locations[restaurant.location] +" / "+ foodCategories[restaurant.category]);
+    detailDiv2.appendChild(detailText2);
+    div.appendChild(detailDiv2);
+
+    const detailDiv3 = document.createElement("div");
+    if (restaurant.isAtmosphere) {
+      detailDiv3.appendChild(document.createTextNode("#분위기 "));
+    }
+    if (restaurant.canEatSingle) {
+      detailDiv3.appendChild(document.createTextNode("#혼밥가능 "));
+    }
+    if (restaurant.hasCostPerformance) {
+      detailDiv3.appendChild(document.createTextNode("#가성비 "));
+    }
+    div.appendChild(detailDiv3);
+
+    document.getElementById('results').appendChild(div);
+  }
+  // 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
+  function getClickHandler(seq) {
+    return function(e) {
+      var marker = markers[seq],
+              infoWindow = infoWindows[seq];
+
+      if (infoWindow.getMap()) {
+        infoWindow.close();
+      } else {
+        infoWindow.open(map, marker);
+      }
+    }
+  }
+
+  for (var i=0, ii=markers.length; i<ii; i++) {
+    naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i));
+  }
+
+</script>
 </html>
 
 
