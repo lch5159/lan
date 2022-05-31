@@ -4,8 +4,15 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: '나눔스퀘어';
+    src: url("../font/NanumSquareRoundB.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
 
 body{
+    font-family: '나눔스퀘어';
     margin: 0;
     background-color: ghostwhite;
 }
@@ -31,6 +38,7 @@ h3{
 }
 h4{
     font-size: 17px;
+    font-weight: bold;
     margin-top: 0;
     margin-bottom: 5px;
     display: inline-block;
@@ -40,7 +48,7 @@ h5{
     margin-top: 5px;
     margin-bottom: 5px;
 }
-span{
+.hashtag span{
     display: inline-block;
     font-size: 12px;
     border-style: solid;
@@ -58,19 +66,19 @@ main button{
     color: white;
     background-color: #9abf7f;
     font-weight: bolder;
-    font-size: 15px;
+    font-size: 20px;
     width: 10%;
     height: 145px;
     box-shadow: -3px -3px 2px rgba(228, 226, 226,0.8), 3px 3px 5px rgba(0,0,0,0.2);
 }
 footer button{
+    display: inline-block;
     float: right;
-    margin-top: 5px;
-    margin-left: 10px;
+    margin: 5px 0 5px 10px;
     border-width: 0;
     border-radius: 5px;
     color: white;
-    background-color: darkslategrey;
+    background-color: seagreen;
     font-weight: bolder;
     font-size: 15px;
     width: 50px;
@@ -81,16 +89,21 @@ footer{
     margin-left: 1rem;
     margin-right: 1rem;
 }
-
+footer div{
+    display: inline-block;
+    width: 100%;
+}
 input[type="text"]{
     display: inline-block;
     margin: 2px 0 2px 0;
     width: 37%;
+    height: 23px;
 }
 input[type="password"]{
     display: inline-block;
     margin: 2px 0 2px 0;
     width: 56%;
+    height: 23px;
 }
 
 textarea{

@@ -2,19 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/popup_style.css">
+    <title>코멘트 삭제</title>
+    <script>
+        function popupClose() {
+            self.close();
+        }
+    </script>
 </head>
 <body>
-<div>
-    <form action="deleteForm.html"
-          th:action="@{/reviews(restaurantId=${param.restaurantId},reviewId=${param.reviewId})}"
-          th:method="delete" th:object="${reviewDeleteForm}">
-        <div>
-            <input type="password" th:field="*{password}" th:text="*{password}">
-        </div>
-        <button type="submit">삭제</button>
-    </form>
-</div>
-
+<header>전남대 맛집 탐색 어플 </header>
+    <main>
+        <form action="deleteForm.html"
+              th:action="@{/reviews(restaurantId=${param.restaurantId},reviewId=${param.reviewId})}"
+              th:method="delete" th:object="${reviewDeleteForm}">
+            <input type="password" th:field="*{password}" th:text="*{password}" id="delpassword" placeholder="비밀번호 입력">
+            <button type="submit" id="delbutton" onclick="popupClose();">삭제</button>
+        </form>
+    </main>
 </body>
 </html>

@@ -6,10 +6,9 @@
   <link rel="stylesheet" href="../css/search_style.css">
   <title>식당 조건 검색</title>
   <script>
-    let check = false;
-    let rowcolor= null;
-
     function colorChange(x, event){
+      let check = false;
+      let rowcolor= null;
       rowcolor = document.getElementById(x);
 
       if(event.target.checked){
@@ -51,17 +50,17 @@
 <header>전남대 맛집 탐색 어플</header>
 <main>
 <form action="" method="post">
-  <div>
-    <div>
-      <h3>언제 식사를 할 예정인가요?(필수)</h3>
-      <table align="center">
-        <tr>
-          <th onclick="colorChange(this.id, event)" id="time1"><label><input type="radio" name="time" id="lunch">점심</label></th>
-          <th onclick="colorChange(this.id, event)" id="time2"><label><input type="radio" name="time" id="dinner">저녁</label></th>
-        </tr>
-      </table>
-    </div>
+  <div class="time">
+    <h3>언제 식사를 할 예정인가요?(필수)</h3>
+    <table align="center">
+      <tr>
+        <th onclick="colorChange(this.id, event)" id="time1"><label><input type="radio" name="time" id="lunch">점심</label></th>
+        <th onclick="colorChange(this.id, event)" id="time2"><label><input type="radio" name="time" id="dinner">저녁</label></th>
+      </tr>
+    </table>
+  </div>
 
+  <div class="location">
     <h3>위치를 모두 선택하세요</h3>
       <table align="center">
         <tr>
@@ -79,7 +78,7 @@
       </table>
   </div>
 
-  <div>
+  <div class="food">
     <h3>먹기 싫은 종류의 음식을 모두 선택하세요</h3>
     <table align="center">
       <tr>
@@ -105,7 +104,7 @@
     </table>
   </div>
 
-  <div>
+  <div class="condition">
     <h3>원하는 조건을 모두 클릭하세요</h3>
     <table align="center">
       <tr>
@@ -116,7 +115,7 @@
     </table>
   </div>
 
-  <div style="text-align: center">
+  <div class="maxCost">
     <h4>최대 금액(1인당) : </h4>
     <input type="text" name="maxCostLine" value="" id="maxCostLine"/>
   </div>

@@ -1,0 +1,79 @@
+@font-face {
+    font-family: '까투리';
+    src: url("../font/Katuri.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    margin: 0;
+    background-color: ghostwhite;
+}
+header{
+    font-family: '까투리';
+    text-align: center;
+    font-size: 25px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: cadetblue;
+    margin-bottom: 1rem;
+    padding: 10px;
+}
+main{
+    margin: 1rem 1rem 1rem;
+    text-align: center;
+}
+h3{
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: center;
+}
+input[type="text"]{
+    display: inline-block;
+    margin: 2px 0 2px 0;
+    width: 35%;
+    height: 23px;
+}
+
+textarea{
+    display: inline-block;
+    width: 95%;
+    margin-top: 5px;
+    resize: none;
+}
+#editbutton{
+    margin-top: 10px;
+    border-width: 0;
+    border-radius: 5px;
+    color: white;
+    background-color: mediumslateblue;
+    font-weight: bolder;
+    font-size: 25px;
+    width: 95%;
+    height: 35px;
+    box-shadow: -3px -3px 2px rgba(228, 226, 226,0.8), 3px 3px 5px rgba(0,0,0,0.2);
+}
+#delbutton{
+    display: inline-block;
+    vertical-align: middle;
+    border-width: 0;
+    border-radius: 5px;
+    color: white;
+    background-color: mediumslateblue;
+    font-weight: bolder;
+    font-size: 22px;
+    width: 93%;
+    height: 35px;
+    box-shadow: -3px -3px 2px rgba(228, 226, 226,0.8), 3px 3px 5px rgba(0,0,0,0.2);
+}
+#editpassword{
+    display: inline-block;
+    margin: 2px 0 2px 0;
+    width: 54%;
+    height: 23px;
+}
+#delpassword{
+    margin-bottom: 5px;
+    width: 90%;
+    height: 23px;
+}

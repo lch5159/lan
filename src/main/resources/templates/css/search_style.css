@@ -5,7 +5,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: '나눔스퀘어';
+    src: url("../font/NanumSquareRoundB.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
+    font-family: '나눔스퀘어';
     margin: 0;
     background-color: ghostwhite;
 }
@@ -64,6 +72,7 @@ article{
 button{
     border-width: 0;
     border-radius: 5px;
+    margin: 5px 10px 10px ;
     color: white;
     background-color: #9abf7f;
     font-weight: bolder;
@@ -72,6 +81,10 @@ button{
     width: 100px;
     height: 50px;
     box-shadow: -3px -3px 2px rgba(228, 226, 226,0.8), 3px 3px 5px rgba(0,0,0,0.2);
+}
+
+.maxCost{
+    text-align: center
 }
 
 @media screen and (min-width: 450px){
