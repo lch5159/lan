@@ -36,10 +36,6 @@ article{
     cursor: pointer;
 }
 
-footer{
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
 table{
     width: 100%;
     border-style: solid;
@@ -63,7 +59,7 @@ table td:last-child{
     background-color: lightgray;
 }
 
-.maps{
+article{
     display: block;
     margin: 0 10px 10px 10px;
     height: 300px;

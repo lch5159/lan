@@ -2,29 +2,18 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/result_style.css">
+  <link rel="stylesheet" href="../../css/result_style.css" th:href="@{/css/result_style.css}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   <title>간단한 지도 표시하기</title>
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tv4q0aykz0"></script>
 </head>
 <body>
-<header onclick="location.href='searchForm.html'">전남대 맛집 탐색 어플</header>
-<main>
-  <article class="maps">
-  </article>
-  <table>
-    <tr>
-      <td>가게명 : 놀부</td><td>상대</td>
-    </tr>
-    <tr>
-      <td>1인당 최소 비용 : 11000</td><td>한식</td>
-    </tr>
-  </table>
-  <hr>
+<div id="map" style="width:400px;height:400px;"></div>
+<!--이거 크기 모바일에 맞춰 가변적으로 바뀌게 해야함.-->
+<div id="results"></div>
+<!--이걸 클릭가능하게 만들아주자. 모양은 CSS겠지머-->
 
-</main>
-</body>
 <script th:inline="javascript">
   var locations = [[${locations}]]
   var foodCategories = [[${foodCategories}]]
@@ -77,38 +66,37 @@
 
     //밑에 리스트 형식으로 html을 만들어준다.
     addRestaurantList(MARKER_SPRITE_POSITION[key]);
-  }
+  };
 
   function addRestaurantList(restaurant) {
-    const div = document.createElement("div");
-    div.setAttribute('id', restaurant.id);
+    const article = document.createElement("article");
+    article.setAttribute('id', restaurant.id);
+    article.setAttribute("style", "cursor: pointer;");
+    article.setAttribute('onclick', 'window.open(\"restaurants/'+restaurant.id+'\")');
 
-    div.setAttribute("style", "cursor: pointer;");
-    div.setAttribute('onclick', 'window.open(\"restaurants/'+restaurant.id+'\")');
+    const detail1_1 = document.createElement("td");
+    const detail1_2 = document.createElement("td");
+    detail1_1.appendChild(document.createTextNode("가게명 : " + restaurant.name));
+    detail1_2.appendChild(document.createTextNode(locations[restaurant.location]));
+    const detail1 = document.createElement("tr");
+    detail1.appendChild(detail1_1);
+    detail1.appendChild(detail1_2);
 
-    const detailDiv1 = document.createElement("div");
-    const detailText1 = document.createTextNode("가게명 : " + restaurant.name + " / 1인당 최소 비용 : " + restaurant.minCostPerPerson);
-    detailDiv1.appendChild(detailText1);
-    div.appendChild(detailDiv1);
+    const detail2_1 = document.createElement("td");
+    const detail2_2 = document.createElement("td");
+    detail2_1.appendChild(document.createTextNode("1인당 최소 비용 : " + restaurant.minCostPerPerson));
+    detail2_2.appendChild(document.createTextNode(foodCategories[restaurant.category]));
+    const detail2 = document.createElement("tr");
+    detail2.appendChild(detail2_1);
+    detail2.appendChild(detail2_2);
 
-    const detailDiv2 = document.createElement("div");
-    const detailText2 = document.createTextNode(locations[restaurant.location] +" / "+ foodCategories[restaurant.category]);
-    detailDiv2.appendChild(detailText2);
-    div.appendChild(detailDiv2);
+    const table = document.createElement("table");
+    table.appendChild(detail1);
+    table.appendChild(detail2);
 
-    const detailDiv3 = document.createElement("div");
-    if (restaurant.isAtmosphere) {
-      detailDiv3.appendChild(document.createTextNode("#분위기 "));
-    }
-    if (restaurant.canEatSingle) {
-      detailDiv3.appendChild(document.createTextNode("#혼밥가능 "));
-    }
-    if (restaurant.hasCostPerformance) {
-      detailDiv3.appendChild(document.createTextNode("#가성비 "));
-    }
-    div.appendChild(detailDiv3);
+    article.appendChild(table);
 
-    document.getElementById('results').appendChild(div);
+    document.getElementById('results').appendChild(article);
   }
   // 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
   function getClickHandler(seq) {
@@ -129,7 +117,9 @@
   }
 
 </script>
+</body>
 </html>
+
 
 
 
