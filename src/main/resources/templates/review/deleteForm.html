@@ -3,44 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/popup_style.css">
+    <link rel="stylesheet" href="../css/delete_style.css">
     <title>코멘트 삭제</title>
-    <script>
-        $(function (){
-            $("#delete").on("click",)
-            $("#아이디").click(function(){
-                $("input[name='selectstar']").val($("input[name='star']:checked").val());
 
-                var param={
-                    chapter: $("#아이디").val()
-                    ,title: $("#아이디2").val()
-                    ,star: $("input[name='selectstar']").val()
-                }
-
-
-
-                $ ajax({
-                    type:"POST",
-                    dataType: "xml",
-                    async: false,
-                    data: param,
-                    url:"",
-
-                    success:function(data){
-                        window.close();
-                    },
-                    error: function(xml){
-                        alert("대이터 취득 실패");
-                    }
-                });
-            });
-        });
-
-
-    </script>
 </head>
 <body>
 <header>전남대 맛집 탐색 어플 </header>
+    <h3>댓글 삭제</h3>
     <main>
         <form action="deleteForm.html"
               th:action="@{/reviews(restaurantId=${param.restaurantId},reviewId=${param.reviewId})}"

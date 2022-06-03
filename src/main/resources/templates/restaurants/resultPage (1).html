@@ -1,126 +1,453 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/result_style.css" th:href="@{/css/result_style.css}">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-  <title>간단한 지도 표시하기</title>
-  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tv4q0aykz0"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/result_style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>간단한 지도 표시하기</title>
+    <script type="text/javascript"
+            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tv4q0aykz0"></script>
 </head>
 <body>
-<div id="map" style="width:400px;height:400px;"></div>
-<!--이거 크기 모바일에 맞춰 가변적으로 바뀌게 해야함.-->
-<div id="results"></div>
+<article id="map"
+         style="width: 400px; height: 400px; position: relative; overflow: hidden; background: url(&quot;http://static.naver.net/maps/mantle/2x/pattern_1.png&quot;) 0px 0px repeat transparent;"
+         tabindex="0">
+    <div style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0; cursor: url(&quot;http://static.naver.net/maps/mantle/2x/openhand.cur&quot;), default;">
+        <div style="position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 0;">
+            <div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 1;">
+                <div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 0; user-select: none;"></div>
+                <div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 1; user-select: none;">
+                    <div style="position: absolute; top: 0px; left: 0px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; display: block; width: 0px; height: 0px; overflow: visible; box-sizing: content-box !important;">
+                        <div draggable="false" unselectable="on"
+                             style="position: absolute; top: 38px; left: 119px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; transform: translateZ(0px); opacity: 1; width: 256px; height: 256px;">
+                            <img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256"
+                                 height="256"
+                                 src="http://nrbe.map.naver.net/styles/basic/1653629123/15/27935/12959@2x.png?mt=bg.ol.sw.ar.lko"
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                        </div>
+                        <div draggable="false" unselectable="on"
+                             style="position: absolute; top: 294px; left: 119px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; transform: translateZ(0px); opacity: 1; width: 256px; height: 256px;">
+                            <img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256"
+                                 height="256"
+                                 src="http://nrbe.map.naver.net/styles/basic/1653629123/15/27935/12960@2x.png?mt=bg.ol.sw.ar.lko"
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                        </div>
+                        <div draggable="false" unselectable="on"
+                             style="position: absolute; top: -218px; left: 119px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; transform: translateZ(0px); opacity: 1; width: 256px; height: 256px;">
+                            <img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256"
+                                 height="256"
+                                 src="http://nrbe.map.naver.net/styles/basic/1653629123/15/27935/12958@2x.png?mt=bg.ol.sw.ar.lko"
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                        </div>
+                        <div draggable="false" unselectable="on"
+                             style="position: absolute; top: -218px; left: 375px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; transform: translateZ(0px); opacity: 1; width: 256px; height: 256px;">
+                            <img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256"
+                                 height="256"
+                                 src="http://nrbe.map.naver.net/styles/basic/1653629123/15/27936/12958@2x.png?mt=bg.ol.sw.ar.lko"
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                        </div>
+                        <div draggable="false" unselectable="on"
+                             style="position: absolute; top: 294px; left: -137px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; transform: translateZ(0px); opacity: 1; width: 256px; height: 256px;">
+                            <img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256"
+                                 height="256"
+                                 src="http://nrbe.map.naver.net/styles/basic/1653629123/15/27934/12960@2x.png?mt=bg.ol.sw.ar.lko"
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                        </div>
+                        <div draggable="false" unselectable="on"
+                             style="position: absolute; top: 38px; left: 375px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; transform: translateZ(0px); opacity: 1; width: 256px; height: 256px;">
+                            <img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256"
+                                 height="256"
+                                 src="http://nrbe.map.naver.net/styles/basic/1653629123/15/27936/12959@2x.png?mt=bg.ol.sw.ar.lko"
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                        </div>
+                        <div draggable="false" unselectable="on"
+                             style="position: absolute; top: 38px; left: -137px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; transform: translateZ(0px); opacity: 1; width: 256px; height: 256px;">
+                            <img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256"
+                                 height="256"
+                                 src="http://nrbe.map.naver.net/styles/basic/1653629123/15/27934/12959@2x.png?mt=bg.ol.sw.ar.lko"
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                        </div>
+                        <div draggable="false" unselectable="on"
+                             style="position: absolute; top: 294px; left: 375px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; transform: translateZ(0px); opacity: 1; width: 256px; height: 256px;">
+                            <img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256"
+                                 height="256"
+                                 src="http://nrbe.map.naver.net/styles/basic/1653629123/15/27936/12960@2x.png?mt=bg.ol.sw.ar.lko"
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                        </div>
+                        <div draggable="false" unselectable="on"
+                             style="position: absolute; top: -218px; left: -137px; z-index: 0; margin: 0px; padding: 0px; border: 0px solid transparent; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; transform: translateZ(0px); opacity: 1; width: 256px; height: 256px;">
+                            <img draggable="false" unselectable="on" alt="" crossorigin="anonymous" width="256"
+                                 height="256"
+                                 src="http://nrbe.map.naver.net/styles/basic/1653629123/15/27934/12958@2x.png?mt=bg.ol.sw.ar.lko"
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; opacity: 1; position: absolute; left: 0px; top: 0px; z-index: 0; width: 256px; height: 256px;">
+                        </div>
+                    </div>
+                </div>
+                <div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 100;">
+                    <div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 101;"></div>
+                    <div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 103;">
+                        <div title=""
+                             style="position: absolute; overflow: hidden; box-sizing: content-box !important; cursor: inherit; z-index: 100; left: 320px; top: 89px; width: 22px; height: 33px;">
+                            <map name="nmarker-852730A2-ADE1-41F0-A1EA-D8061B424F5E">
+                                <area href="#" shape="poly"
+                                      coords="11,0,9,0,6,1,4,2,2,4,0,8,0,12,1,14,2,16,5,19,5,20,6,23,8,26,9,30,9,34,13,34,13,30,14,26,16,23,17,20,17,19,20,16,21,14,22,12,22,12,22,8,20,4,18,2,16,1,13,0"
+                                      alt="마커의 경위도는 126.912181,35.17983 입니다." style="display: block; cursor: pointer;">
+                            </map>
+                            <img draggable="false" unselectable="on"
+                                 src="http://static.naver.net/maps/mantle/2x/marker-default.png" alt=""
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; position: absolute; cursor: inherit; width: 22px; height: 33px; left: 0px; top: 0px;"><img
+                                src="http://static.naver.net/maps/mantle/2x/dot.gif" alt=""
+                                usemap="#nmarker-852730A2-ADE1-41F0-A1EA-D8061B424F5E"
+                                style="position: absolute; border: 0px; left: 0px; top: 0px; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; user-select: none; width: 22px; height: 33px;">
+                        </div>
+                        <div title=""
+                             style="position: absolute; overflow: hidden; box-sizing: content-box !important; cursor: inherit; z-index: 100; left: 347px; top: 234px; width: 22px; height: 33px;">
+                            <map name="nmarker-03368754-B992-40AF-AF13-24329DFF1B1F">
+                                <area href="#" shape="poly"
+                                      coords="11,0,9,0,6,1,4,2,2,4,0,8,0,12,1,14,2,16,5,19,5,20,6,23,8,26,9,30,9,34,13,34,13,30,14,26,16,23,17,20,17,19,20,16,21,14,22,12,22,12,22,8,20,4,18,2,16,1,13,0"
+                                      alt="마커의 경위도는 126.913314,35.174766 입니다." style="display: block; cursor: pointer;">
+                            </map>
+                            <img draggable="false" unselectable="on"
+                                 src="http://static.naver.net/maps/mantle/2x/marker-default.png" alt=""
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; position: absolute; cursor: inherit; width: 22px; height: 33px; left: 0px; top: 0px;"><img
+                                src="http://static.naver.net/maps/mantle/2x/dot.gif" alt=""
+                                usemap="#nmarker-03368754-B992-40AF-AF13-24329DFF1B1F"
+                                style="position: absolute; border: 0px; left: 0px; top: 0px; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; user-select: none; width: 22px; height: 33px;">
+                        </div>
+                        <div title=""
+                             style="position: absolute; overflow: hidden; box-sizing: content-box !important; cursor: inherit; z-index: 100; left: 351px; top: 209px; width: 22px; height: 33px;">
+                            <map name="nmarker-367C6C47-2570-4C8A-A870-FCCAA138035F">
+                                <area href="#" shape="poly"
+                                      coords="11,0,9,0,6,1,4,2,2,4,0,8,0,12,1,14,2,16,5,19,5,20,6,23,8,26,9,30,9,34,13,34,13,30,14,26,16,23,17,20,17,19,20,16,21,14,22,12,22,12,22,8,20,4,18,2,16,1,13,0"
+                                      alt="마커의 경위도는 126.9135,35.175613 입니다." style="display: block; cursor: pointer;">
+                            </map>
+                            <img draggable="false" unselectable="on"
+                                 src="http://static.naver.net/maps/mantle/2x/marker-default.png" alt=""
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; position: absolute; cursor: inherit; width: 22px; height: 33px; left: 0px; top: 0px;"><img
+                                src="http://static.naver.net/maps/mantle/2x/dot.gif" alt=""
+                                usemap="#nmarker-367C6C47-2570-4C8A-A870-FCCAA138035F"
+                                style="position: absolute; border: 0px; left: 0px; top: 0px; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; user-select: none; width: 22px; height: 33px;">
+                        </div>
+                        <div title=""
+                             style="position: absolute; overflow: hidden; box-sizing: content-box !important; cursor: inherit; z-index: 100; left: 374px; top: 220px; width: 22px; height: 33px;">
+                            <map name="nmarker-A81728BB-A337-4BD8-AC59-AF2E1D89284D">
+                                <area href="#" shape="poly"
+                                      coords="11,0,9,0,6,1,4,2,2,4,0,8,0,12,1,14,2,16,5,19,5,20,6,23,8,26,9,30,9,34,13,34,13,30,14,26,16,23,17,20,17,19,20,16,21,14,22,12,22,12,22,8,20,4,18,2,16,1,13,0"
+                                      alt="마커의 경위도는 126.914508,35.175255 입니다." style="display: block; cursor: pointer;">
+                            </map>
+                            <img draggable="false" unselectable="on"
+                                 src="http://static.naver.net/maps/mantle/2x/marker-default.png" alt=""
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; position: absolute; cursor: inherit; width: 22px; height: 33px; left: 0px; top: 0px;"><img
+                                src="http://static.naver.net/maps/mantle/2x/dot.gif" alt=""
+                                usemap="#nmarker-A81728BB-A337-4BD8-AC59-AF2E1D89284D"
+                                style="position: absolute; border: 0px; left: 0px; top: 0px; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; user-select: none; width: 22px; height: 33px;">
+                        </div>
+                        <div title=""
+                             style="position: absolute; overflow: hidden; box-sizing: content-box !important; cursor: inherit; z-index: 100; left: 69px; top: 153px; width: 22px; height: 33px;">
+                            <map name="nmarker-34F4A294-3340-4647-AB28-820A8140B398">
+                                <area href="#" shape="poly"
+                                      coords="11,0,9,0,6,1,4,2,2,4,0,8,0,12,1,14,2,16,5,19,5,20,6,23,8,26,9,30,9,34,13,34,13,30,14,26,16,23,17,20,17,19,20,16,21,14,22,12,22,12,22,8,20,4,18,2,16,1,13,0"
+                                      alt="마커의 경위도는 126.901387,35.177599 입니다." style="display: block; cursor: pointer;">
+                            </map>
+                            <img draggable="false" unselectable="on"
+                                 src="http://static.naver.net/maps/mantle/2x/marker-default.png" alt=""
+                                 style="margin: 0px; padding: 0px; border: 0px solid transparent; display: block; user-select: none; -webkit-user-drag: none; box-sizing: content-box !important; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; position: absolute; cursor: inherit; width: 22px; height: 33px; left: 0px; top: 0px;"><img
+                                src="http://static.naver.net/maps/mantle/2x/dot.gif" alt=""
+                                usemap="#nmarker-34F4A294-3340-4647-AB28-820A8140B398"
+                                style="position: absolute; border: 0px; left: 0px; top: 0px; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important; user-select: none; width: 22px; height: 33px;">
+                        </div>
+                    </div>
+                    <div style="overflow: visible; width: 100%; height: 0px; position: absolute; display: block; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; z-index: 106;"></div>
+                </div>
+            </div>
+            <div style="position: absolute; display: none; margin: 0px; padding: 0px; border: 0px none; top: 0px; left: 0px; overflow: visible; width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(255, 255, 255); z-index: 10000; opacity: 0.5;"></div>
+        </div>
+    </div>
+    <div style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; right: 0px;">
+        <div style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: right; height: 21px;">
+            <div style="position: relative; width: 77px; height: 14px; margin: 0px 12px 7px 2px; overflow: hidden; pointer-events: auto;">
+                <span style="display:block;margin:0;padding:0 4px;text-align:center;font-size:10px;line-height:11px;font-family:Helvetica,AppleSDGothicNeo-Light,nanumgothic,NanumGothic,&quot;나눔고딕&quot;,Dotum,&quot;돋움&quot;,sans-serif;font-weight:bold;color:#000;text-shadow:-1px 0 rgba(255, 255, 255, 0.3), 0 1px rgba(255, 255, 255, 0.3), 1px 0 rgba(255, 255, 255, 0.3), 0 -1px rgba(255, 255, 255, 0.3);">300m</span><img
+                    src="http://static.naver.net/maps/mantle/2x/scale-normal-b.png" width="69" height="4" alt=""
+                    style="position: absolute; left: 4px; bottom: 0px; z-index: 2; display: block; width: 69px; height: 4px; overflow: hidden; margin: 0px; padding: 0px; border: 0px none; max-width: none !important; max-height: none !important; min-width: 0px !important; min-height: 0px !important;"><img
+                    src="http://static.naver.net/maps/mantle/2x/scale-normal-l.png" width="4" height="10" alt=""
+                    style="position:absolute;left:0;bottom:0;z-index:2;display:block;width:4px;height:10px;overflow:hidden;margin:0;padding:0;border:0 none;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"><img
+                    src="http://static.naver.net/maps/mantle/2x/scale-normal-r.png" width="4" height="10" alt=""
+                    style="position:absolute;right:0;bottom:0;z-index:2;display:block;width:4px;height:10px;overflow:hidden;margin:0;padding:0;border:0 none;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;">
+            </div>
+        </div>
+        <div style="border: 0px none; margin: -1px 0px 0px; padding: 0px; pointer-events: none; float: right; height: 22px;">
+            <a href="https://ssl.pstatic.net/static/maps/mantle/notice/legal.html" target="_blank"
+               style="display: block; width: 48px; height: 17px; overflow: hidden; margin: 0px 5px 5px 12px; pointer-events: auto;"><img
+                    src="http://static.naver.net/maps/mantle/2x/naver-normal-new.png" width="48" height="17" alt="NAVER"
+                    style="display:block;width:48px;height:17px;overflow:hidden;border:0 none;margin:0;padding:0;max-width:none !important;max-height:none !important;min-width:0 !important;min-height:0 !important;"></a>
+        </div>
+    </div>
+    <div style="position: absolute; z-index: 100; margin: 0px; padding: 0px; pointer-events: none; bottom: 0px; left: 0px;">
+        <div style="border: 0px none; margin: 0px; padding: 0px; pointer-events: none; float: left; height: 21px;">
+            <div class="map_copyright"
+                 style="margin: 0px; padding: 0px 0px 2px 10px; height: 19px; line-height: 19px; color: rgb(68, 68, 68); font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; font-size: 11px; clear: both; white-space: nowrap; pointer-events: none;">
+                <div style="float: left;"><span style="white-space: pre; color: rgb(68, 68, 68);">© NAVER Corp.</span>
+                </div>
+                <a href="#"
+                   style="font-family: Helvetica, AppleSDGothicNeo-Light, nanumgothic, NanumGothic, 나눔고딕, Dotum, 돋움, sans-serif; font-size: 11px; line-height: 19px; margin: 0px 0px 0px 5px; padding: 0px; color: rgb(68, 68, 68); float: left; pointer-events: auto; text-decoration: underline; display: none;">더보기</a>
+                <div style="float: left;"><a target="_blank" href="http://www.openstreetmap.org/copyright"
+                                             style="pointer-events: auto; white-space: pre; display: none; color: rgb(68, 68, 68);">
+                    /OpenStreetMap</a></div>
+            </div>
+        </div>
+    </div>
+    <div style="border: 1px solid rgb(41, 41, 48); background: rgb(255, 255, 255); padding: 15px; color: rgb(51, 51, 51); position: absolute; font-size: 11px; line-height: 1.5; clear: both; display: none; max-width: 350px !important; max-height: 300px !important;">
+        <h5 style="font-size: 12px; margin-top: 0px; margin-bottom: 10px;">지도 데이터</h5><a href="#"
+                                                                                         style="position: absolute; top: 8px; right: 8px; width: 14px; height: 14px; font-size: 14px; line-height: 14px; display: block; overflow: hidden; color: rgb(68, 68, 68); text-decoration: none; font-weight: bold; text-align: center;">x</a>
+        <div><span style="white-space: pre; color: rgb(68, 68, 68); float: left;">© NAVER Corp.</span><a target="_blank"
+                                                                                                         href="http://www.openstreetmap.org/copyright"
+                                                                                                         style="pointer-events: auto; white-space: pre; color: rgb(68, 68, 68); float: left; display: none;">
+            /OpenStreetMap</a></div>
+    </div>
+</article><!--이거 크기 모바일에 맞춰 가변적으로 바뀌게 해야함.-->
+<div id="results">
+    <table id="213" style="cursor: pointer;" onclick="window.open(&quot;restaurants/213&quot;)">
+        <tr>
+            <td>가게명 : 삼첩분식</td>
+            <td>상대</td>
+        </tr>
+        <tr>
+            <td>1인당 최소 비용 : 8900</td>
+            <td>분식</td>
+        </tr>
+    </table>
+    <table id="220" style="cursor: pointer;" onclick="window.open(&quot;restaurants/220&quot;)">
+        <tr>
+            <td>가게명 : 마피아떡볶이</td>
+            <td>상대</td>
+        </tr>
+        <tr>
+            <td>1인당 최소 비용 : 7000</td>
+            <td>분식</td>
+        </tr>
+    </table>
+    <table id="217" style="cursor: pointer;" onclick="window.open(&quot;restaurants/217&quot;)">
+        <tr>
+            <td>가게명 : 떡볶이 참잘하는집</td>
+            <td>상대</td>
+        </tr>
+        <tr>
+            <td>1인당 최소 비용 : 4750</td>
+            <td>분식</td>
+        </tr>
+    </table>
+    <table id="144" style="cursor: pointer;" onclick="window.open(&quot;restaurants/144&quot;)">
+        <tr>
+            <td>가게명 : 오리엔탈게이트</td>
+            <td>학교내부</td>
+        </tr>
+        <tr>
+            <td>1인당 최소 비용 : 9000</td>
+            <td>아시안</td>
+        </tr>
+    </table>
+    <table id="75" style="cursor: pointer;" onclick="window.open(&quot;restaurants/75&quot;)">
+        <tr>
+            <td>가게명 : 통큰돈까스</td>
+            <td>전대후문</td>
+        </tr>
+        <tr>
+            <td>1인당 최소 비용 : 6000</td>
+            <td>분식</td>
+        </tr>
+    </table>
+</div>
 <!--이걸 클릭가능하게 만들아주자. 모양은 CSS겠지머-->
 
-<script th:inline="javascript">
-  var locations = [[${locations}]]
-  var foodCategories = [[${foodCategories}]]
-  var results = [[${results}]];
+<script>
+    var locations = {
+        "FRONT_DOOR": "\uC804\uB300\uC815\uBB38",
+        "BACK_DOOR": "\uC804\uB300\uD6C4\uBB38",
+        "SANGDAE": "\uC0C1\uB300",
+        "ENGINEER_SIDE_DOOR": "\uACF5\uB300\uCABD\uBB38",
+        "BOKGAE": "\uBCF5\uAC1C\uB3C4\uB85C",
+        "INSIDE_SCHOOL": "\uD559\uAD50\uB0B4\uBD80"
+    }
+    var foodCategories = {
+        "KOREAN": "\uD55C\uC2DD",
+        "CHINESE": "\uC911\uC2DD",
+        "JAPANESE": "\uC77C\uC2DD",
+        "ITALY": "\uC591\uC2DD",
+        "ASIAN": "\uC544\uC2DC\uC548",
+        "CHICKEN": "\uCE58\uD0A8",
+        "FAST_FOOD": "\uD328\uC2A4\uD2B8\uD478\uB4DC",
+        "GOGI": "\uACE0\uAE30(\uAD6C\uC6CC\uBA39\uB294)",
+        "BUNSIK": "\uBD84\uC2DD",
+        "ETC": "\uAE30\uD0C0"
+    }
+    var results = [{
+        "id": 213,
+        "name": "\uC0BC\uCCA9\uBD84\uC2DD",
+        "location": "SANGDAE",
+        "category": "BUNSIK",
+        "isAtmosphere": false,
+        "hasCostPerformance": false,
+        "canEatSingle": false,
+        "locationX": 35.17746,
+        "locationY": 126.90206,
+        "url": "https:\/\/map.naver.com\/v5\/search\/%EC%82%BC%EC%B2%A9%EB%B6%84%EC%8B%9D\/place\/1351114257?c=14125984.7986903,4188095.5221726,15,0,0,0,dh\u0026placePath=%3Fentry%253Dbmp",
+        "minCostPerPerson": 8900
+    }, {
+        "id": 220,
+        "name": "\uB9C8\uD53C\uC544\uB5A1\uBCF6\uC774",
+        "location": "SANGDAE",
+        "category": "BUNSIK",
+        "isAtmosphere": false,
+        "hasCostPerformance": false,
+        "canEatSingle": false,
+        "locationX": 35.179135,
+        "locationY": 126.899998,
+        "url": "https:\/\/map.naver.com\/v5\/search\/%EB%A7%88%ED%94%BC%EC%95%84%EB%96%A1%EB%B3%B6%EC%9D%B4\/place\/1992635726?c=14123251.6620860,4187872.4676751,13,0,0,0,dh\u0026placePath=%3Fentry%253Dbmp",
+        "minCostPerPerson": 7000
+    }, {
+        "id": 217,
+        "name": "\uB5A1\uBCF6\uC774 \uCC38\uC798\uD558\uB294\uC9D1",
+        "location": "SANGDAE",
+        "category": "BUNSIK",
+        "isAtmosphere": false,
+        "hasCostPerformance": true,
+        "canEatSingle": false,
+        "locationX": 35.177284,
+        "locationY": 126.902391,
+        "url": "https:\/\/map.naver.com\/v5\/search\/%EB%96%A1%EC%B0%B8\/place\/1139697347?c=14125775.5871731,4188008.8221070,15,0,0,0,dh\u0026placePath=%3Fentry%253Dpll",
+        "minCostPerPerson": 4750
+    }, {
+        "id": 144,
+        "name": "\uC624\uB9AC\uC5D4\uD0C8\uAC8C\uC774\uD2B8",
+        "location": "INSIDE_SCHOOL",
+        "category": "ASIAN",
+        "isAtmosphere": false,
+        "hasCostPerformance": false,
+        "canEatSingle": true,
+        "locationX": 35.180886,
+        "locationY": 126.905283,
+        "url": "https:\/\/map.naver.com\/v5\/search\/%EC%98%A4%EB%A6%AC%EC%97%94%ED%83%88%EA%B2%8C%EC%9D%B4%ED%8A%B8\/place\/1728598090?c=14126582.5310299,4188476.7190651,15,0,0,0,dh\u0026placePath=%3Fentry%253Dpll",
+        "minCostPerPerson": 9000
+    }, {
+        "id": 75,
+        "name": "\uD1B5\uD070\uB3C8\uAE4C\uC2A4",
+        "location": "BACK_DOOR",
+        "category": "BUNSIK",
+        "isAtmosphere": false,
+        "hasCostPerformance": true,
+        "canEatSingle": false,
+        "locationX": 35.176863,
+        "locationY": 126.912695,
+        "url": "https:\/\/map.naver.com\/v5\/search\/%ED%86%B5%ED%81%B0%EB%8F%88%EA%B9%8C%EC%8A%A4\/place\/36315229?c=14127387.4771401,4187942.1155440,15,0,0,0,dh\u0026placePath=%3Fentry%253Dbmp",
+        "minCostPerPerson": 6000
+    }];
 
-  // 디비에 테스트로 넣을 값.
-  // insert into restaurant values(1,'ddsjladal',true, 'KOREAN', 35.177049, 126.906614, true, true, 'BACK_DOOR', 1000, '테스트가게' ,'12312313');
-  // insert into restaurant values(2,'ddsjladal',true, 'CHINESE', 35.178049, 126.906614, true, true, 'BACK_DOOR', 3000, '테스트가게1' ,'12312313');
-  // SELECT * FROM RESTAURANT;
+    // 디비에 테스트로 넣을 값.
+    // insert into restaurant values(1,'ddsjladal',true, 'KOREAN', 35.177049, 126.906614, true, true, 'BACK_DOOR', 1000, '테스트가게' ,'12312313');
+    // insert into restaurant values(2,'ddsjladal',true, 'CHINESE', 35.178049, 126.906614, true, true, 'BACK_DOOR', 3000, '테스트가게1' ,'12312313');
+    // SELECT * FROM RESTAURANT;
 
-  var mapOptions = {
-    center: new naver.maps.LatLng(35.177049, 126.906614),
-    zoom: 15
-  };
+    var mapOptions = {
+        center: new naver.maps.LatLng(35.177049, 126.906614),
+        zoom: 15
+    };
 
-  var map = new naver.maps.Map('map', mapOptions);
+    var map = new naver.maps.Map('map', mapOptions);
 
-  results = results.reduce(function(target, key, index) {
-    target[key.name] = key;
-    return target;
-  }, {}) //initial empty object
+    results = results.reduce(function (target, key, index) {
+        target[key.name] = key;
+        return target;
+    }, {}) //initial empty object
 
-  var MARKER_SPRITE_X_OFFSET = 29,
-          MARKER_SPRITE_Y_OFFSET = 50,
-          MARKER_SPRITE_POSITION = results;
+    var MARKER_SPRITE_X_OFFSET = 29,
+        MARKER_SPRITE_Y_OFFSET = 50,
+        MARKER_SPRITE_POSITION = results;
 
-  var markers = [],
-          infoWindows = [];
+    var markers = [],
+        infoWindows = [];
 
-  for (var key in MARKER_SPRITE_POSITION) {
+    for (var key in MARKER_SPRITE_POSITION) {
 
-    var position = new naver.maps.LatLng(
+        var position = new naver.maps.LatLng(
             MARKER_SPRITE_POSITION[key].locationX,
             MARKER_SPRITE_POSITION[key].locationY);
 
-    var marker = new naver.maps.Marker({
-      map: map,
-      position: position,
-      zIndex: 100
-    });
+        var marker = new naver.maps.Marker({
+            map: map,
+            position: position,
+            zIndex: 100
+        });
 
-    var infoWindow = new naver.maps.InfoWindow({
-      content: '<div style="width:150px;text-align:center;padding:10px;">' +
-              '가게명 : '+ key +
-              '<br>종류 : '+ foodCategories[MARKER_SPRITE_POSITION[key].category] +'</br></div>'
-    });
+        var infoWindow = new naver.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:10px;">' +
+                '가게명 : ' + key +
+                '<br>종류 : ' + foodCategories[MARKER_SPRITE_POSITION[key].category] + '</br></div>'
+        });
 
-    markers.push(marker);
-    infoWindows.push(infoWindow);
+        markers.push(marker);
+        infoWindows.push(infoWindow);
 
-    //밑에 리스트 형식으로 html을 만들어준다.
-    addRestaurantList(MARKER_SPRITE_POSITION[key]);
-  };
-
-  function addRestaurantList(restaurant) {
-    const article = document.createElement("article");
-    article.setAttribute('id', restaurant.id);
-    article.setAttribute("style", "cursor: pointer;");
-    article.setAttribute('onclick', 'window.open(\"restaurants/'+restaurant.id+'\")');
-
-    const detail1_1 = document.createElement("td");
-    const detail1_2 = document.createElement("td");
-    detail1_1.appendChild(document.createTextNode("가게명 : " + restaurant.name));
-    detail1_2.appendChild(document.createTextNode(locations[restaurant.location]));
-    const detail1 = document.createElement("tr");
-    detail1.appendChild(detail1_1);
-    detail1.appendChild(detail1_2);
-
-    const detail2_1 = document.createElement("td");
-    const detail2_2 = document.createElement("td");
-    detail2_1.appendChild(document.createTextNode("1인당 최소 비용 : " + restaurant.minCostPerPerson));
-    detail2_2.appendChild(document.createTextNode(foodCategories[restaurant.category]));
-    const detail2 = document.createElement("tr");
-    detail2.appendChild(detail2_1);
-    detail2.appendChild(detail2_2);
-
-    const table = document.createElement("table");
-    table.appendChild(detail1);
-    table.appendChild(detail2);
-
-    article.appendChild(table);
-
-    document.getElementById('results').appendChild(article);
-  }
-  // 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
-  function getClickHandler(seq) {
-    return function(e) {
-      var marker = markers[seq],
-              infoWindow = infoWindows[seq];
-
-      if (infoWindow.getMap()) {
-        infoWindow.close();
-      } else {
-        infoWindow.open(map, marker);
-      }
+        //밑에 리스트 형식으로 html을 만들어준다.
+        addRestaurantList(MARKER_SPRITE_POSITION[key]);
     }
-  }
+    ;
 
-  for (var i=0, ii=markers.length; i<ii; i++) {
-    naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i));
-  }
+    function addRestaurantList(restaurant) {
+        // const article = document.createElement("article");
+        // article.setAttribute('id', restaurant.id);
+        // article.setAttribute("style", "cursor: pointer;");
+        // article.setAttribute('onclick', 'window.open(\"restaurants/'+restaurant.id+'\")');
+
+        const detail1_1 = document.createElement("td");
+        const detail1_2 = document.createElement("td");
+        detail1_1.appendChild(document.createTextNode("가게명 : " + restaurant.name));
+        detail1_2.appendChild(document.createTextNode(locations[restaurant.location]));
+        const detail1 = document.createElement("tr");
+        detail1.appendChild(detail1_1);
+        detail1.appendChild(detail1_2);
+
+        const detail2_1 = document.createElement("td");
+        const detail2_2 = document.createElement("td");
+        detail2_1.appendChild(document.createTextNode("1인당 최소 비용 : " + restaurant.minCostPerPerson));
+        detail2_2.appendChild(document.createTextNode(foodCategories[restaurant.category]));
+        const detail2 = document.createElement("tr");
+        detail2.appendChild(detail2_1);
+        detail2.appendChild(detail2_2);
+
+        const table = document.createElement("table");
+        table.setAttribute('id', restaurant.id);
+        table.setAttribute("style", "cursor: pointer;");
+        table.setAttribute('onclick', 'window.open(\"restaurants/' + restaurant.id + '\")');
+
+        table.appendChild(detail1);
+        table.appendChild(detail2);
+
+        // article.appendChild(table);
+
+        document.getElementById('results').appendChild(table);
+    }
+
+    // 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
+    function getClickHandler(seq) {
+        return function (e) {
+            var marker = markers[seq],
+                infoWindow = infoWindows[seq];
+
+            if (infoWindow.getMap()) {
+                infoWindow.close();
+            } else {
+                infoWindow.open(map, marker);
+            }
+        }
+    }
+
+    for (var i = 0, ii = markers.length; i < ii; i++) {
+        naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i));
+    }
 
 </script>
+
+
 </body>
 </html>
-
-
-
-
-

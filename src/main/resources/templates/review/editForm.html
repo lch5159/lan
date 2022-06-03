@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/popup_style.css">
+    <link rel="stylesheet" href="../css/edit_style.css">
     <title>코멘트 수정</title>
     <script>
         function popupClose() {
@@ -17,7 +17,10 @@
 <main>
     <h3>댓글 수정</h3>
     <form action="editForm.html" th:action="@{/reviews(restaurantId=${param.restaurantId},reviewId=${param.reviewId})}" th:method="patch" th:object="${reviewUpdateForm}">
-        <button></button>
+        <input type="text" th:id="writerName" th:name="writerName" th:value="${review.writerName}" th:text="${review.writerName}" placeholder="아이디">
+        <input type="password" th:field="*{password}" id="editpassword" placeholder="비밀번호"><br>
+        <textarea rows="10" cols="40" th:id="content" th:name="content" th:value="${review.content}" placeholder="내용"></textarea>
+        <button type="submit" id="editbutton" onclick="popupClose();">수정</button>
     </form>
 </main>
 </body>
