@@ -8,12 +8,12 @@
 </head>
 
 <body>
-<header>랜선선배</header>
+<header>랜선 선배</header>
 <main>
 <form action="" method="post">
   <div class="time">
-    <h3>1. 밥 언제 먹을거야?</h3><h5>*(필수)</h5>
     <table id="table_time">
+      <caption>1. 밥 언제 먹을거야? *(필수)</caption>
       <tr>
         <td id="time1">
           <input type="radio" name="location" id="lunch">
@@ -28,8 +28,8 @@
   </div>
 
   <div class="location">
-    <h3>2. 어디서 먹게?</h3>
       <table>
+        <caption>2. 어디서 먹게?</caption>
         <tr>
           <td id="location1">
             <input type="checkbox" name="location" id="front">
@@ -63,8 +63,8 @@
   </div>
 
   <div class="food">
-    <h3>3. 너 어떤거 <span>싫어</span>해?</h3>
     <table>
+      <caption>3. 너 어떤거 <span>싫어</span>해?</caption>
       <tr>
         <td id="food1">
           <input type="checkbox" name="location" id="korea">
@@ -111,8 +111,8 @@
   </div>
 
   <div class="condition">
-    <h3>4. 어떻게 먹을거야?</h3>
     <table>
+      <caption>4. 어떻게 먹을거야?</caption>
       <tr>
         <td id="condition1">
           <input type="checkbox" name="location" id="vibe">
@@ -131,8 +131,14 @@
   </div>
 
   <div class="maxCost">
-    <h3>5. 1인당 얼마까지 가능해?</h3>
-    <input type="text" name="maxCostLine" value="" id="maxCostLine"/>
+    <table>
+      <caption>5. 1인당 얼마까지 가능해?</caption>
+      <tr>
+        <td><input type="text" name="maxCostLine" value="" id="maxCostLine"></td>
+        <td>원</td>
+      </tr>
+
+    </table>
     <button class="btn-primary" type="submit" onclick="location.href='resultPage.html'">알려주기!</button>
   </div>
 
