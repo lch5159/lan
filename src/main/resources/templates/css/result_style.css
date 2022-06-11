@@ -36,11 +36,16 @@ article{
     cursor: pointer;
 }
 
+#results{
+    border-bottom: 3px solid gray;
+}
+
 table{
     width: 100%;
     border-style: solid;
     border-color: gray;
     border-collapse: collapse;
+    border-bottom: 10px;
 }
 tr th{
     border-style: solid;
@@ -54,9 +59,11 @@ td{
 }
 table td:first-child{
      background-color: white;
+     width: 70%;
  }
 table td:last-child{
     background-color: lightgray;
+    width: 30%;
 }
 
 article{

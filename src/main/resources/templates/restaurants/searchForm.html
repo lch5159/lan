@@ -5,124 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/search_style.css">
   <title>식당 조건 검색</title>
-  <script>
-    function colorChange(x, event){
-      let check = false;
-      let rowcolor= null;
-      rowcolor = document.getElementById(x);
-
-      if(event.target.checked){
-        rowcolor.style.background="darkseagreen";
-      }else{
-        rowcolor.style.background="ghostwhite";
-      }
-      if(x==='time1'){
-        check=document.getElementById("lunch");
-        let rowcolor1 = document.getElementById("time1");
-        let rowcolor2 = document.getElementById("time2");
-        if(check.checked){
-          rowcolor1.style.background="darkseagreen";
-          rowcolor2.style.background="ghostwhite";
-
-        }else{
-          rowcolor1.style.background="ghostwhite";
-          rowcolor2.style.background="darkseagreen";
-        }
-      }
-      if(x==='time2'){
-        check=document.getElementById("dinner");
-        let rowcolor1 = document.getElementById("time1");
-        let rowcolor2 = document.getElementById("time2");
-        if(check.checked){
-          rowcolor1.style.background="ghostwhite";
-          rowcolor2.style.background="darkseagreen";
-
-        }else{
-          rowcolor1.style.background="darkseagreen";
-          rowcolor2.style.background="ghostwhite";
-        }
-      }
-    }
-  </script>
 </head>
 
 <body>
-<header>전남대 맛집 탐색 어플</header>
+<header>랜선선배</header>
 <main>
 <form action="" method="post">
   <div class="time">
-    <h3>언제 식사를 할 예정인가요?(필수)</h3>
-    <table align="center">
+    <h3>1. 밥 언제 먹을거야?</h3><h5>*(필수)</h5>
+    <table id="table_time">
       <tr>
-        <th onclick="colorChange(this.id, event)" id="time1"><label><input type="radio" name="time" id="lunch">점심</label></th>
-        <th onclick="colorChange(this.id, event)" id="time2"><label><input type="radio" name="time" id="dinner">저녁</label></th>
+        <td id="time1">
+          <input type="radio" name="location" id="lunch">
+          <label for="lunch" class="checkbox">점심</label>
+        </td>
+        <td id="time2">
+          <input type="radio" name="location" id="dinner">
+          <label for="dinner" class="checkbox">저녁</label>
+        </td>
       </tr>
     </table>
   </div>
 
   <div class="location">
-    <h3>위치를 모두 선택하세요</h3>
-      <table align="center">
+    <h3>2. 어디서 먹게?</h3>
+      <table>
         <tr>
-          <th onclick="colorChange(this.id, event)" id="location1"><label><input type="checkbox" name="location" id="front">정문&#x2B07;</label></th>
-          <th onclick="colorChange(this.id, event)" id="location2"><label><input type="checkbox" name="location" id="back">후문&#x27A1;</label></th>
-        </tr>
-          <tr>
-          <th onclick="colorChange(this.id, event)" id="location3"><label><input type="checkbox" name="location" id="sangdae">상대&#x2196;</label></th>
-          <th onclick="colorChange(this.id, event)" id="location4"><label><input type="checkbox" name="location" id="side">쪽문&#x2197;</label></th>
+          <td id="location1">
+            <input type="checkbox" name="location" id="front">
+            <label for="front" class="checkbox">정문</label>
+          </td>
+          <td id="location2">
+            <input type="checkbox" name="location" id="back">
+            <label for="back" class="checkbox">후문</label>
+          </td>
+          <td id="location3">
+            <input type="checkbox" name="location" id="sangdae">
+            <label for="sangdae" class="checkbox">상대</label>
+          </td>
+
         </tr>
         <tr>
-          <th onclick="colorChange(this.id, event)" id="location5"><label><input type="checkbox" name="location" id="bockgae">복개도로&#x2198;</label></th>
-          <th onclick="colorChange(this.id, event)" id="location6"><label><input type="checkbox" name="location" id="location_etc">기타</label></th>
+          <td id="location4">
+            <input type="checkbox" name="location" id="side">
+            <label for="side" class="checkbox">쪽문</label>
+          </td>
+          <td id="location5">
+            <input type="checkbox" name="location" id="bockgae">
+            <label for="bockgae" class="checkbox">복개도로</label>
+          </td>
+          <td id="location6">
+            <input type="checkbox" name="location" id="location_etc">
+            <label for="location_etc" class="checkbox">기타</label>
+          </td>
         </tr>
       </table>
   </div>
 
   <div class="food">
-    <h3>먹기 싫은 종류의 음식을 모두 선택하세요</h3>
-    <table align="center">
+    <h3>3. 너 이거 <span>싫어</span>해?</h3>
+    <table>
       <tr>
-        <th onclick="colorChange(this.id, event)" id="food1"><label><input type="checkbox" name="food" id="korea">한</label></th>
-        <th onclick="colorChange(this.id, event)" id="food2"><label><input type="checkbox" name="food" id="china">중</label></th>
+        <td id="food1">
+          <input type="checkbox" name="location" id="korea">
+          <label for="korea" class="checkbox">한</label>
+        </td>
+        <td id="food2">
+          <input type="checkbox" name="location" id="china">
+          <label for="china" class="checkbox">중</label>
+        </td>
+        <td id="food3">
+          <input type="checkbox" name="location" id="japan">
+          <label for="japan" class="checkbox">일</label>
+        </td>
       </tr>
       <tr>
-        <th onclick="colorChange(this.id, event)" id="food3"><label><input type="checkbox" name="food" id="japan">일</label></th>
-        <th onclick="colorChange(this.id, event)" id="food4"><label><input type="checkbox" name="food" id="western">양</label></th>
+        <td id="food4">
+          <input type="checkbox" name="location" id="western">
+          <label for="western" class="checkbox">양</label>
+        </td>
+        <td id="food5">
+          <input type="checkbox" name="location" id="asian">
+          <label for="asian" class="checkbox">아시아</label>
+        </td>
+        <td id="food6">
+          <input type="checkbox" name="location" id="chicken">
+          <label for="chicken" class="checkbox">치킨</label>
+        </td>
       </tr>
       <tr>
-        <th onclick="colorChange(this.id, event)" id="food5"><label><input type="checkbox" name="food" id="asian">아시아</label></th>
-        <th onclick="colorChange(this.id, event)" id="food6"><label><input type="checkbox" name="food" id="chicken">치킨</label></th>
-      </tr>
-      <tr>
-        <th onclick="colorChange(this.id, event)" id="food7"><label><input type="checkbox" name="food" id="fastfood">패푸</label></th>
-        <th onclick="colorChange(this.id, event)" id="food8"><label><input type="checkbox" name="food" id="steak">고기</label></th>
-      </tr>
-      <tr>
-        <th onclick="colorChange(this.id, event)" id="food9"><label><input type="checkbox" name="food" id="snack">분식</label></th>
-        <th onclick="colorChange(this.id, event)" id="food10"><label><input type="checkbox" name="food" id="food_etc">기타</label></th>
+        <td id="food7">
+          <input type="checkbox" name="location" id="fastfood">
+          <label for="fastfood" class="checkbox">패푸</label>
+        </td>
+        <td id="food8">
+          <input type="checkbox" name="location" id="steak">
+          <label for="steak" class="checkbox">고기</label>
+        </td>
+        <td id="food9">
+          <input type="checkbox" name="location" id="snack">
+          <label for="snack" class="checkbox">분식</label>
+        </td>
       </tr>
     </table>
   </div>
 
   <div class="condition">
-    <h3>원하는 조건을 모두 클릭하세요</h3>
-    <table align="center">
+    <h3>4. 어떻게 먹을거야?</h3>
+    <table>
       <tr>
-        <th onclick="colorChange(this.id, event)" id="condition1"><label><input type="checkbox" name="condition" id="vibe">분위기</label></th>
-        <th onclick="colorChange(this.id, event)" id="condition2"><label><input type="checkbox" name="condition" id="effectiveness">가성비</label></th>
-        <th onclick="colorChange(this.id, event)" id="condition3"><label><input type="checkbox" name="condition" id="solo">혼밥</label></th>
+        <td id="condition1">
+          <input type="checkbox" name="location" id="vibe">
+          <label for="vibe" class="checkbox">분위기</label>
+        </td>
+        <td id="condition2">
+          <input type="checkbox" name="location" id="effectiveness">
+          <label for="effectiveness" class="checkbox">가성비</label>
+        </td>
+        <td id="condition3">
+          <input type="checkbox" name="location" id="solo">
+          <label for="solo" class="checkbox">혼밥</label>
+        </td>
       </tr>
     </table>
   </div>
 
   <div class="maxCost">
-    <h4>최대 금액(1인당) : </h4>
+    <h3>5. 1인당 얼마까지 가능해?</h3>
     <input type="text" name="maxCostLine" value="" id="maxCostLine"/>
+    <button class="btn-primary" type="submit" onclick="location.href='resultPage.html'">알려주기!</button>
   </div>
 
-  <button class="btn-primary" type="submit" onclick="location.href='resultPage.html'">전송</button>
-
 </form>
+
 </main>
 </body>
 </html>
