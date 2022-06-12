@@ -1,34 +1,40 @@
 @font-face {
+    font-family: '나눔손글씨 느릿느릿체';
+    src: url("../font/나눔손글씨 느릿느릿체.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: '까투리';
     src: url("../font/Katuri.ttf");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: '나눔스퀘어';
-    src: url("../font/NanumSquareRoundB.ttf");
+    font-family: '미생';
+    src: url("../font/SDMiSaeng.ttf");
     font-weight: normal;
     font-style: normal;
 }
+header{
+    font-family: '나눔손글씨 느릿느릿체';
+    text-align: center;
+    color: #F46364;
+    font-size: 60px;
+    padding: 10px;
+    margin: 15px 0 15px 0;
+}
 
 body{
-    font-family: '나눔스퀘어';
-    margin: 0;
-    background-color: ghostwhite;
-}
-header{
-    font-family: '까투리';
-    text-align: center;
-    font-size: 35px;
-    border-style: solid;
-    border-width: 6px;
-    border-color: cadetblue;
-    margin-bottom: 1rem;
-    padding: 10px;
+    font-family: '미생';
+    margin: 0 15px 15px 15px;
+    background-color: #FDE9E0;
 }
 main{
-    margin-left: 1rem;
-    margin-right: 1rem;
+    background-color: ghostwhite;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 h3{

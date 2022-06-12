@@ -10,235 +10,65 @@
           src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tv4q0aykz0"></script>
 </head>
 <body>
-<header onClick="location.href='/search'" style="cursor: pointer">전남대 맛집 탐색 어플</header>
+<header onClick="location.href='/search'" style="cursor: pointer">랜선 선배</header>
+<article id="map"></article>
 <main>
-  <article id="map" style="width: 400px; height: 400px; position: relative; overflow: hidden;"></article>
   <div id="results">
+    <img src="../img/pngegg.png" alt="marker">
     <table id="212" style="cursor: pointer;">
+      <caption>창평 시장 국밥</caption>
       <tr>
-        <td>가게명 : 알촌</td>
-        <td>상대</td>
-      </tr>
-      <tr>
-        <td>1인당 최소 비용 : 4300</td>
+        <td> - 상대</td>
         <td>분식</td>
+        <td>1인당 최소 비용 : 4300</td>
       </tr>
-      <hr>
     </table>
-    <table id="27" style="cursor: pointer;">
+  </div>
+  <div id="f">
+    <img src="../img/pngegg.png" alt="marker">
+    <table id="213" style="cursor: pointer;">
+      <caption>전지연 삼겹살</caption>
       <tr>
-        <td>가게명 : 미스터초밥왕</td>
-        <td>전대후문</td>
+        <td> - 상대</td>
+        <td>고기</td>
+        <td>1인당 최소 비용 : 3000</td>
       </tr>
-      <tr>
-        <td>1인당 최소 비용 : 9900</td>
-        <td>일식</td>
-      </tr>
-      <hr>
     </table>
-    <table id="159" style="cursor: pointer;">
+  </div>
+  <div id="result">
+    <img src="../img/pngegg.png" alt="marker">
+    <table id="214" style="cursor: pointer;">
+      <caption>두찜</caption>
       <tr>
-        <td>가게명 : 통큰쭈꾸미</td>
-        <td>상대</td>
-      </tr>
-      <tr>
-        <td>1인당 최소 비용 : 7000</td>
+        <td> - 전대후문</td>
         <td>한식</td>
+        <td>1인당 최소 비용 : 10900</td>
       </tr>
-      <hr>
+    </table>
+  </div>
+  <div id="result">
+    <img src="../img/pngegg.png" alt="marker">
+    <table id="214" style="cursor: pointer;">
+      <caption>두찜</caption>
+      <tr>
+        <td> - 전대후문</td>
+        <td>한식</td>
+        <td>1인당 최소 비용 : 10900</td>
+      </tr>
+    </table>
+  </div>
+  <div id="result">
+    <img src="../img/pngegg.png" alt="marker">
+    <table id="214" style="cursor: pointer;">
+      <caption>두찜</caption>
+      <tr>
+        <td> - 전대후문</td>
+        <td>한식</td>
+        <td>1인당 최소 비용 : 10900</td>
+      </tr>
     </table>
   </div>
 </main>
-
-<script>
-  var locations = {
-    "FRONT_DOOR": "\uC804\uB300\uC815\uBB38",
-    "BACK_DOOR": "\uC804\uB300\uD6C4\uBB38",
-    "SANGDAE": "\uC0C1\uB300",
-    "ENGINEER_SIDE_DOOR": "\uACF5\uB300\uCABD\uBB38",
-    "BOKGAE": "\uBCF5\uAC1C\uB3C4\uB85C",
-    "INSIDE_SCHOOL": "\uD559\uAD50\uB0B4\uBD80"
-  }
-  var foodCategories = {
-    "KOREAN": "\uD55C\uC2DD",
-    "CHINESE": "\uC911\uC2DD",
-    "JAPANESE": "\uC77C\uC2DD",
-    "ITALY": "\uC591\uC2DD",
-    "ASIAN": "\uC544\uC2DC\uC548",
-    "CHICKEN": "\uCE58\uD0A8",
-    "FAST_FOOD": "\uD328\uC2A4\uD2B8\uD478\uB4DC",
-    "GOGI": "\uACE0\uAE30(\uAD6C\uC6CC\uBA39\uB294)",
-    "BUNSIK": "\uBD84\uC2DD",
-    "ETC": "\uAE30\uD0C0"
-  }
-  var results = [{
-    "id": 212,
-    "name": "\uC54C\uCD0C",
-    "location": "SANGDAE",
-    "category": "BUNSIK",
-    "isAtmosphere": false,
-    "hasCostPerformance": true,
-    "canEatSingle": true,
-    "locationX": 35.177726,
-    "locationY": 126.904228,
-    "url": "https:\/\/map.naver.com\/v5\/search\/%EC%95%8C%EC%B4%8C\/place\/37915784?c=14125984.7986903,4188095.5221726,15,0,0,0,dh\u0026placePath=%3Fentry%253Dbmp",
-    "minCostPerPerson": 4300
-  }, {
-    "id": 27,
-    "name": "\uBBF8\uC2A4\uD130\uCD08\uBC25\uC655",
-    "location": "BACK_DOOR",
-    "category": "JAPANESE",
-    "isAtmosphere": true,
-    "hasCostPerformance": false,
-    "canEatSingle": true,
-    "locationX": 35.176079,
-    "locationY": 126.912986,
-    "url": "https:\/\/map.naver.com\/v5\/search\/%EB%AF%B8%EC%8A%A4%ED%84%B0%EC%B4%88%EB%B0%A5%EC%99%95\/place\/34120403?c=14126952.8775101,4187834.7839212,15,0,0,0,dh\u0026placePath=%3Fentry%253Dbmp",
-    "minCostPerPerson": 9900
-  }, {
-    "id": 159,
-    "name": "\uD1B5\uD070\uCB48\uAFB8\uBBF8",
-    "location": "SANGDAE",
-    "category": "KOREAN",
-    "isAtmosphere": false,
-    "hasCostPerformance": true,
-    "canEatSingle": true,
-    "locationX": 35.177881,
-    "locationY": 126.902749,
-    "url": "https:\/\/map.naver.com\/v5\/search\/%ED%86%B5%ED%81%B0%EC%AD%88%EA%BE%B8%EB%AF%B8\/place\/1799793789?placePath=%3Fentry=pll%26from=nx%26fromNxList=true\u0026c=14125816.8184827,4188075.5839267,15,0,0,0,dh",
-    "minCostPerPerson": 7000
-  }, {
-    "id": 5,
-    "name": "\uACE0\uC218\uB2ED\uAC08\uBE44",
-    "location": "BACK_DOOR",
-    "category": "KOREAN",
-    "isAtmosphere": false,
-    "hasCostPerformance": false,
-    "canEatSingle": false,
-    "locationX": 35.176819,
-    "locationY": 126.913449,
-    "url": "https:\/\/map.naver.com\/v5\/search\/%EA%B3%A0%EC%88%98%EB%8B%AD%EA%B0%88%EB%B9%84%20%EC%A0%84%EB%82%A8%EB%8C%80%EC%A0%90\/place\/16176568?c=14126961.6717501,4188021.4334786,15,0,0,0,dh\u0026placePath=%3Fentry%253Dpll",
-    "minCostPerPerson": 12000
-  }, {
-    "id": 86,
-    "name": "\uD48D\uB0A8\uC625",
-    "location": "BOKGAE",
-    "category": "KOREAN",
-    "isAtmosphere": true,
-    "hasCostPerformance": false,
-    "canEatSingle": false,
-    "locationX": 35.173914,
-    "locationY": 126.913217,
-    "url": "https:\/\/map.naver.com\/v5\/search\/%ED%92%8D%EB%82%A8%EC%98%A5\/place\/36017365?c=14127902.9558742,4187577.3409065,15,0,0,0,dh\u0026placePath=%3Fentry%253Dbmp",
-    "minCostPerPerson": 7000
-  }];
-
-  // 디비에 테스트로 넣을 값.
-  // insert into restaurant values(1,'ddsjladal',true, 'KOREAN', 35.177049, 126.906614, true, true, 'BACK_DOOR', 1000, '테스트가게' ,'12312313');
-  // insert into restaurant values(2,'ddsjladal',true, 'CHINESE', 35.178049, 126.906614, true, true, 'BACK_DOOR', 3000, '테스트가게1' ,'12312313');
-  // SELECT * FROM RESTAURANT;
-
-  var mapOptions = {
-    center: new naver.maps.LatLng(35.177049, 126.906614),
-    zoom: 15
-  };
-
-  var map = new naver.maps.Map('map', mapOptions);
-
-  results = results.reduce(function (target, key, index) {
-    target[key.name] = key;
-    return target;
-  }, {}) //initial empty object
-
-  var MARKER_SPRITE_X_OFFSET = 29,
-          MARKER_SPRITE_Y_OFFSET = 50,
-          MARKER_SPRITE_POSITION = results;
-
-  var markers = [],
-          infoWindows = [];
-
-  for (var key in MARKER_SPRITE_POSITION) {
-
-    var position = new naver.maps.LatLng(
-            MARKER_SPRITE_POSITION[key].locationX,
-            MARKER_SPRITE_POSITION[key].locationY);
-
-    var marker = new naver.maps.Marker({
-      map: map,
-      position: position,
-      zIndex: 100
-    });
-
-    var infoWindow = new naver.maps.InfoWindow({
-      content: '<div style="width:150px;text-align:center;padding:10px;">' +
-              '가게명 : ' + key +
-              '<br>종류 : ' + foodCategories[MARKER_SPRITE_POSITION[key].category] + '</br></div>'
-    });
-
-    markers.push(marker);
-    infoWindows.push(infoWindow);
-
-    //밑에 리스트 형식으로 html을 만들어준다.
-    addRestaurantList(MARKER_SPRITE_POSITION[key]);
-  }
-  ;
-
-  function addRestaurantList(restaurant) {
-    // const article = document.createElement("article");
-    // article.setAttribute('id', restaurant.id);
-    // article.setAttribute("style", "cursor: pointer;");
-    // article.setAttribute('onclick', 'window.open(\"restaurants/'+restaurant.id+'\")');
-
-    const detail1_1 = document.createElement("td");
-    const detail1_2 = document.createElement("td");
-    detail1_1.appendChild(document.createTextNode("가게명 : " + restaurant.name));
-    detail1_2.appendChild(document.createTextNode(locations[restaurant.location]));
-    const detail1 = document.createElement("tr");
-    detail1.appendChild(detail1_1);
-    detail1.appendChild(detail1_2);
-
-    const detail2_1 = document.createElement("td");
-    const detail2_2 = document.createElement("td");
-    detail2_1.appendChild(document.createTextNode("1인당 최소 비용 : " + restaurant.minCostPerPerson));
-    detail2_2.appendChild(document.createTextNode(foodCategories[restaurant.category]));
-    const detail2 = document.createElement("tr");
-    detail2.appendChild(detail2_1);
-    detail2.appendChild(detail2_2);
-
-    const table = document.createElement("table");
-    table.setAttribute('id', restaurant.id);
-    table.setAttribute("style", "cursor: pointer;");
-    table.setAttribute('onclick', 'window.open(\"restaurants/' + restaurant.id + '\")');
-
-    table.appendChild(detail1);
-    table.appendChild(detail2);
-    table.appendChild(document.createElement("hr"));
-
-    // article.appendChild(table);
-
-    document.getElementById('results').appendChild(table);
-  }
-
-  // 해당 마커의 인덱스를 seq라는 클로저 변수로 저장하는 이벤트 핸들러를 반환합니다.
-  function getClickHandler(seq) {
-    return function (e) {
-      var marker = markers[seq],
-              infoWindow = infoWindows[seq];
-
-      if (infoWindow.getMap()) {
-        infoWindow.close();
-      } else {
-        infoWindow.open(map, marker);
-      }
-    }
-  }
-
-  for (var i = 0, ii = markers.length; i < ii; i++) {
-    naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i));
-  }
-
-</script>
-
 
 </body>
 </html>

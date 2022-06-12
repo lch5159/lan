@@ -1,69 +1,81 @@
 @font-face {
+    font-family: '나눔손글씨 느릿느릿체';
+    src: url("../font/나눔손글씨 느릿느릿체.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: '까투리';
     src: url("../font/Katuri.ttf");
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
-    font-family: '나눔스퀘어';
-    src: url("../font/NanumSquareRoundB.ttf");
+    font-family: '미생';
+    src: url("../font/SDMiSaeng.ttf");
     font-weight: normal;
     font-style: normal;
 }
+header{
+    font-family: '나눔손글씨 느릿느릿체';
+    text-align: center;
+    color: #F46364;
+    font-size: 60px;
+    padding: 10px;
+    margin: 15px 0 15px 0;
+}
 
 body{
-    font-family: '나눔스퀘어';
-    margin: 0;
-    background-color: ghostwhite;
-}
-header{
-    font-family: '까투리';
-    text-align: center;
-    font-size: 35px;
-    border-style: solid;
-    border-width: 6px;
-    border-color: cadetblue;
-    margin-bottom: 1rem;
-    padding: 10px;
+    font-family: '미생';
+    margin: 0 15px 15px 15px;
+    background-color: #FDE9E0;
 }
 main{
+    background-color: ghostwhite;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+article {
+    border-style: solid;
+    border-color: #F46364;
+    border-radius: 15px;
+    margin: 50px;
+    background-color: white;
+    
+}
+
+td{
+    border-left: solid 2px gray;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 7px;
+    padding-right: 5px;
+}
+img {
+    display: inline-block;
     margin-left: 10px;
-    margin-right: 10px;
 }
 
-article{
-    cursor: pointer;
-}
-
-#results{
-    border-bottom: 3px solid gray;
+caption{
+    display: inline-block;
+    font-size: 25px;
 }
 
 table{
-    width: 100%;
-    border-style: solid;
-    border-color: gray;
-    border-collapse: collapse;
-    border-bottom: 10px;
-}
-tr th{
-    border-style: solid;
-    border-color: gray;
-    background-color: blanchedalmond;
-}
-td{
-    text-align: center;
-    border-style: solid;
-    border-color: gray;
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 table td:first-child{
-     background-color: white;
-     width: 70%;
+
+    border-left-style: none;
  }
 table td:last-child{
-    background-color: lightgray;
-    width: 30%;
 }
 
 article{
@@ -83,6 +95,13 @@ article{
     main{
         width: 450px;
         display: inline-block;
-
+    }
+    article{
+        display: inline-block;
+        vertical-align: top;
+        width: 450px;
+        height: 400px;
+        position: center;
+        border-style: solid;
     }
 }
