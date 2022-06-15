@@ -1,54 +1,74 @@
 @font-face {
+    font-family: '나눔손글씨 느릿느릿체';
+    src: url("../font/나눔손글씨 느릿느릿체.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: '까투리';
     src: url("../font/Katuri.ttf");
     font-weight: normal;
     font-style: normal;
 }
-body{
-    margin: 0;
-    background-color: ghostwhite;
+@font-face {
+    font-family: '미생';
+    src: url("../font/SDMiSaeng.ttf");
+    font-weight: normal;
+    font-style: normal;
 }
 header{
-    font-family: '까투리';
+    font-family: '나눔손글씨 느릿느릿체';
     text-align: center;
-    font-size: 25px;
-    border-style: solid;
-    border-width: 6px;
-    border-color: cadetblue;
-    margin-bottom: 1rem;
+    color: #F46364;
+    font-size: 60px;
     padding: 10px;
+    margin: 15px 0 15px 0;
+}
+
+body{
+    font-family: '미생';
+    margin: 0 15px 15px 15px;
+    background-color: #FDE9E0;
+    text-align: center;
 }
 main{
-    margin: 1rem 1rem 1rem;
-    text-align: center;
+    background-color: #FDE9E0;
+    border-radius: 20px;
+    padding: 20px;
 }
 h3{
-    font-size: 25px;
+    font-weight: lighter !important;
     margin-top: 0;
     margin-bottom: 5px;
     text-align: center;
+    font-size: 28px;
 }
-input[type="text"]{
-    display: inline-block;
-    margin: 2px 0 2px 0;
-    width: 35%;
-    height: 23px;
-}
+
 input[type="password"]{
-    margin-bottom: 5px;
-    width: 90%;
-    height: 23px;
+    display: inline-block;
+    text-align: right;
+    outline: #ff030c;
+    width: 230px;
+    height: 25px;
+    margin: 0 auto;
+    background-color: white;
+    border-style: solid;
+    border-color: #F46364;
+    border-width: 3px;
+    border-radius: 5px;
+    box-shadow: none;
+    margin-bottom: 10px;
 }
 button{
-    display: inline-block;
-    vertical-align: middle;
+    font-family: '까투리';
+    font-weight: lighter;
     border-width: 0;
     border-radius: 5px;
+    margin: 30px 0 10px ;
     color: white;
-    background-color: mediumslateblue;
-    font-weight: bolder;
-    font-size: 22px;
-    width: 93%;
-    height: 35px;
+    background-color: #F46364;
+    font-size: 25px;
+    width: 150px;
+    height: 50px;
     box-shadow: -3px -3px 2px rgba(228, 226, 226,0.8), 3px 3px 5px rgba(0,0,0,0.2);
 }

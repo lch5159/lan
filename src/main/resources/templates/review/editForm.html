@@ -13,7 +13,7 @@
     </script>
 </head>
 <body>
-<header>전남대 맛집 탐색 어플 </header>
+<header>랜선 선배</header>
 <main>
     <h3>댓글 수정</h3>
     <form action="editForm.html" th:action="@{/reviews(restaurantId=${param.restaurantId},reviewId=${param.reviewId})}" th:method="patch" th:object="${reviewUpdateForm}">

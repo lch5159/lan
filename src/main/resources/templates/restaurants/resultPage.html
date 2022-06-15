@@ -10,61 +10,18 @@
           src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=tv4q0aykz0"></script>
 </head>
 <body>
+
 <header onClick="location.href='/search'" style="cursor: pointer">랜선 선배</header>
-<article id="map"></article>
+<article id="map"></article> <!--지도 들어가는 자리, article태그로 바꿔주기, header와 main태그 사이로 바꾸기-->
 <main>
   <div id="results">
-    <img src="../img/pngegg.png" alt="marker">
+    <img src="../img/pngegg.png" alt="marker"> <!--이미지 들어가는자리, src에 이미지 경로 지정-->
     <table id="212" style="cursor: pointer;">
-      <caption>창평 시장 국밥</caption>
+      <caption>창평 시장 국밥</caption> <!--가게명, 기존엔 td태그에 작성했지만 '가게명 : '을 삭제하고 caption태그로 바꿈-->
       <tr>
-        <td> - 상대</td>
-        <td>분식</td>
-        <td>1인당 최소 비용 : 4300</td>
-      </tr>
-    </table>
-  </div>
-  <div id="f">
-    <img src="../img/pngegg.png" alt="marker">
-    <table id="213" style="cursor: pointer;">
-      <caption>전지연 삼겹살</caption>
-      <tr>
-        <td> - 상대</td>
-        <td>고기</td>
-        <td>1인당 최소 비용 : 3000</td>
-      </tr>
-    </table>
-  </div>
-  <div id="result">
-    <img src="../img/pngegg.png" alt="marker">
-    <table id="214" style="cursor: pointer;">
-      <caption>두찜</caption>
-      <tr>
-        <td> - 전대후문</td>
-        <td>한식</td>
-        <td>1인당 최소 비용 : 10900</td>
-      </tr>
-    </table>
-  </div>
-  <div id="result">
-    <img src="../img/pngegg.png" alt="marker">
-    <table id="214" style="cursor: pointer;">
-      <caption>두찜</caption>
-      <tr>
-        <td> - 전대후문</td>
-        <td>한식</td>
-        <td>1인당 최소 비용 : 10900</td>
-      </tr>
-    </table>
-  </div>
-  <div id="result">
-    <img src="../img/pngegg.png" alt="marker">
-    <table id="214" style="cursor: pointer;">
-      <caption>두찜</caption>
-      <tr>
-        <td> - 전대후문</td>
-        <td>한식</td>
-        <td>1인당 최소 비용 : 10900</td>
+        <td> - 위치</td>
+        <td>종류</td>
+        <td>1인당 최소 비용 : 가격</td>
       </tr>
     </table>
   </div>

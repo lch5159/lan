@@ -8,9 +8,9 @@
 
 </head>
 <body>
-<header>전남대 맛집 탐색 어플 </header>
-    <h3>댓글 삭제</h3>
+<header>랜선 선배</header>
     <main>
+        <h3>댓글 삭제</h3>
         <form action="deleteForm.html"
               th:action="@{/reviews(restaurantId=${param.restaurantId},reviewId=${param.reviewId})}"
               th:method="delete" th:object="${reviewDeleteForm}">
