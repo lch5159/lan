@@ -30,24 +30,57 @@ body{
     margin: 0 15px 15px 15px;
     background-color: #FDE9E0;
 }
-main{
+main {
     background-color: #FDE9E0;
     border-radius: 20px;
     padding: 20px;
 }
-
-h3{
-
-    font-weight: lighter !important;
-    margin-top: 0;
-    margin-bottom: 5px;
+hr{
+    margin: 0 8px 0 8px;
+}
+section{
+    display: inline-block;
+    border-style: solid;
+    border-color: #F46364;
+    border-radius: 15px;
+    width: 100%;
+    background-color: #FFF4F0;
+    padding: 10px 0 10px 0;
+}
+article{
     text-align: center;
-    font-size: 28px;
+}
+.informaion div{
+    display: inline-block;
+    background-color: #FFE4D9;
+    width: 35%;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+}
+h2{
+    display: inline-block;
+    font-weight: lighter !important;
+    margin: 0;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 35px;
+}
+span{
+    font-size: 25px;
+}
+h3{
+    display: block;
+    font-weight: lighter !important;
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
 }
 h4{
     font-weight: lighter !important;
-    font-size: 26px;
-    margin-top: 0;
+    color: #F46364;
+    font-size: 23px;
+    margin-top: 10px;
     margin-bottom: 5px;
     display: inline-block;
 }
@@ -59,14 +92,6 @@ h4{
     display: inline;
     color: black;
 }
-h5{
-    font-weight: lighter !important;
-    font-size: 22px;
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 p{
     padding: 0;
     margin: 0;
@@ -75,12 +100,7 @@ p{
     text-align: center;
 }
 .hashtag div{
-    display: inline-block;
-    border-style: solid;
-    border-color: #F46364;
-    border-radius: 15px;
-    width: 100%;
-    background-color: #FFF4F0;
+
 }
 .hashtag span{
     display: inline-block;
@@ -94,16 +114,31 @@ p{
     margin: 15px;
 }
 
-main button{
+.hyperlink{
+    background-color: #FFBBBC;
+    font-family: '까투리';
+    font-weight: lighter;
+    border-width: 0;
+    border-radius: 5px;
+    margin: 5px;
+    color: white;
+    font-size: 15px;
+    width: 30%;
+    height: 40px;
+    float: right;
+    box-shadow: -3px -3px 2px rgba(228, 226, 226,0.8), 3px 3px 5px rgba(0,0,0,0.2);
+}
+
+.bbs button{
     font-family: '까투리';
     font-weight: lighter;
     border-width: 0;
     border-radius: 5px;
     color: white;
     background-color: #F46364;
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 20px;
-    width: 95%;
+    width: 30%;
     height: 40px;
     box-shadow: -3px -3px 2px rgba(228, 226, 226,0.8), 3px 3px 5px rgba(0,0,0,0.2);
 }
@@ -112,9 +147,9 @@ main button{
     text-align: center;
 }
 input[type="text"]{
-    background-color: #FFF4F0;
-    border-color: #FFD2C3;
-    border-width: 1px;
+    background-color: #FFFAF7;
+    border-color: #FFD4C4;
+    border-width: 2px;
     border-radius: 5px;
     display: inline-block;
     margin: 2px 0 2px 0;
@@ -123,9 +158,9 @@ input[type="text"]{
     border-style: solid;
 }
 input[type="password"]{
-    background-color: #FFF4F0;
-    border-color: #FFD2C3;
-    border-width: 1px;
+    background-color: #FFFAF7;
+    border-color: #FFD4C4;
+    border-width: 2px;
     border-style: solid;
     border-radius: 5px;
     display: inline-block;
@@ -135,10 +170,10 @@ input[type="password"]{
 }
 
 textarea{
-    background-color: #FFF4F0;
-    border-color: #FFD2C3;
-    border-width: 1px;
-    border-radius: 5px;
+    background-color: #FFFAF7;
+    border-color: #FFD4C4;
+    border-width: 2px;
+    border-radius: 10px;
     display: inline-block;
     width: 89%;
     margin-top: 5px;

@@ -9,72 +9,83 @@
         function editPopup() {
             window.open("../review/editForm.html", "코멘트 수정", "width=320, height=500, left=30, top=50");
         }
+
         function deletePopup() {
             window.open("../review/deleteForm.html", "코멘트 삭제", "width=320, height=500, left=30, top=50");
         }
     </script>
 </head>
 <body>
-    <header onclick="location.href='searchForm.html'">랜선 선배</header>
-    <main>
-        <section class="explain">
-            <article class="informaion">
-                <h4>가게명 : </h4>
-                <a href="#" target="_blank">맛집</a><br>
-                <h4>카테고리 : <span>한식</span></h4><br>
-                <h5> - 점심 추천 메뉴 : <span>긴티띠게</span></h5>
-                <h5> - 가격 : <span>8,000</span></h5>
-            </article>
-            <article class="hashtag">
-                <div>
-                    <h4 id="tmi">TMI : <span>에 대한 의견을 나눠주세요!음식점에 대한dd 의견을 나눠주세요!음식점에 대한 의ddd견을 나눠주세요!</span></h4>
-                    <p>
-                        <span>#가성비</span>
-                        <span>#분위기좋은</span>
-                        <span>#혼밥가능</span>
-                    </p>
-                </div>
-            </article>
-        </section>
-        <hr>
-        <section class="bbs">
-            <h3>음식점에 대한 의견을 나눠주세요!</h3>
-            <form action="" method="post">
-                <input type="text" placeholder="아이디"/>
-                <input type="password" placeholder="비밀번호"/><br>
-                <textarea rows="10" cols="40" class="content" id="content" placeholder="내용"></textarea>
-                <button type="submit" id="submit">전송!</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <div> <!--이 div 하나가 댓글 하나-->
+<header onclick="location.href='searchForm.html'">랜선 선배</header>
+<main>
+    <h2>음식점 이름<span>/</span></h2>
+    <span>한식</span>
+    <button class="hyperlink" onclick="location.href='#';">네이버 이동</button>
+    <section class="explain">
+        <article class="informaion">
+            <div>
+                <h4>점심 추천</h4>
+                <h3>긴티띠게</h3>
+                <h3>8000</h3>
+            </div>
+            <div>
+                <h4>저녁 추천</h4>
+                <h3>챔티띠게</h3>
+                <h3>7000</h3>
+            </div>
             <hr>
-            <table>
-                <tr>
-                    <th>아이디</th><th>작성시간</th>
-                </tr>
-                <tr>
-                    <td colspan="2">여기 정.말 맛있습니다</td>
-                </tr>
-            </table>
-            <button type="submit" onclick="editPopup();">수정</button>
-            <button type="submit" onclick="deletePopup();">삭제</button>
-        </div>
-        <div> <!--이 div 하나가 댓글 하나-->
-            <hr>
-            <table>
-                <tr>
-                    <th>아이디</th><th>작성시간</th>
-                </tr>
-                <tr>
-                    <td colspan="2">여기 정.말 맛있습니다</td>
-                </tr>
-            </table>
-            <button type="submit" onclick="editPopup();">수정</button>
-            <button type="submit" onclick="deletePopup();">삭제</button>
-        </div>
-    </footer>
+        </article>
+        <article class="hashtag">
+            <div>
+                <h4 id="tmi">TMI. <span>대한 의견을 나눠주세요!음식점에 대한dd 의견을 나눠주세요!음식점에 대한 의ddd견을 나눠주세요!</span></h4>
+                <p>
+                    <span>#가성비</span>
+                    <span>#분위기좋은</span>
+                    <span>#혼밥가능</span>
+                </p>
+            </div>
+        </article>
+    </section>
+    <hr>
+    <section class="bbs">
+        <h3>당신의 TMI는?</h3>
+        <form action="" method="post">
+            <input type="text" placeholder="아이디"/>
+            <input type="password" placeholder="비밀번호"/><br>
+            <textarea rows="10" cols="40" class="content" id="content" placeholder="내용"></textarea>
+            <button type="submit" id="submit">전송!</button>
+        </form>
+    </section>
+</main>
+<footer>
+    <hr>
+    <div> <!--이 div 하나가 댓글 하나-->
+        <table>
+            <tr>
+                <th>아이디</th>
+                <th>작성시간</th>
+            </tr>
+            <tr>
+                <td colspan="2">여기 정.말 맛있습니다</td>
+            </tr>
+        </table>
+        <button type="submit" onclick="editPopup();">수정</button>
+        <button type="submit" onclick="deletePopup();">삭제</button>
+    </div>
+    <div> <!--이 div 하나가 댓글 하나-->
+        <table>
+            <tr>
+                <th>아이디</th>
+                <th>작성시간</th>
+            </tr>
+            <tr>
+                <td colspan="2">여기 정.말 맛있습니다</td>
+            </tr>
+        </table>
+        <button type="submit" onclick="editPopup();">수정</button>
+        <button type="submit" onclick="deletePopup();">삭제</button>
+    </div>
+</footer>
 </body>
 <!--타임리프 써서 반복.-->
 </html>

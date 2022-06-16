@@ -12,9 +12,9 @@
 <body>
 
 <header onClick="location.href='/search'" style="cursor: pointer">랜선 선배</header>
-<article id="map"></article> <!--지도 들어가는 자리, article태그로 바꿔주기, header와 main태그 사이로 바꾸기-->
+<article id="maps"></article> <!--지도 들어가는 자리, article태그로 바꿔주기, header와 main태그 사이로 바꾸기-->
 <main>
-  <div id="results">
+  <div id="results"><!--필수!! 이 div태그 단위로 반복되는거라 가장 바깥 태그는 div가 되어야함-->
     <img src="../img/pngegg.png" alt="marker"> <!--이미지 들어가는자리, src에 이미지 경로 지정-->
     <table id="212" style="cursor: pointer;">
       <caption>창평 시장 국밥</caption> <!--가게명, 기존엔 td태그에 작성했지만 '가게명 : '을 삭제하고 caption태그로 바꿈-->
@@ -25,6 +25,7 @@
       </tr>
     </table>
   </div>
+
 </main>
 
 </body>
